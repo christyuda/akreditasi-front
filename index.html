@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AKREDITASI WEB</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="css/tailwind/tailwind.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="shuffle-for-tailwind.png">
+    <script src="js/main.js"></script>
+</head>
+<body class="antialiased bg-body text-body font-body">
+    <div class="">
+                
+      <div>
+        <nav class="lg:hidden py-6 px-6 border-b">
+          <div class="flex items-center justify-between">
+            <a class="text-2xl font-semibold" href="#">
+              <img class="h-10" src="artemis-assets/logos/mobileulbi.svg" alt="" width="auto">
+            </a>
+            <button class="navbar-burger flex items-center rounded focus:outline-none">
+              <svg class="text-white bg-indigo-500 hover:bg-indigo-600 block h-8 w-8 p-2 rounded" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                <title>Mobile menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+              </svg>
+            </button>
+          </div>
+        </nav>
+        <div class="hidden lg:block navbar-menu relative z-50">
+          <div class="navbar-backdrop fixed lg:hidden inset-0 bg-gray-800 opacity-10"></div>
+          <nav class="fixed top-0 left-0 bottom-0 flex flex-col w-3/4 lg:w-80 sm:max-w-xs pt-6 pb-8 bg-white border-r overflow-y-auto">
+            <div class="flex w-full items-center px-6 pb-6 mb-6 lg:border-b border-blue-50">
+              <a class="text-xl font-semibold" href="#">
+                <img class="h-8" src="artemis-assets/logos/ulbiwhite.svg" alt="" width="auto">
+              </a>
+            </div>
+            <!--navbar start-->
+            <div class="px-4 pb-6">
+              <h3 class="mb-2 text-xs uppercase text-gray-200 font-medium">Dashboard</h3>
+              <!--dropdown-->
+              <ul id="side-menu" x-data="{selected:1}" class="w-full float-none flex flex-col font-medium ltr:pl-1.5 rtl:pr-1.5">
+                <ul class="mb-8 text-sm font-medium">
+                <!--multi level mennnn-->
+                <li class="relative">
+                  <a  :class="{ 'text-indigo-500 dark:text-gray-300': selected == 2 }" @click="selected !== 2 ? selected = 2 : selected = null" class="flex items-center pl-3 py-3 pr-2 text-gray-500 hover:bg-indigo-50 block rounded py-2.5 px-6 hover:text-indigo-500 dark:hover:text-gray-300" href="javascript:;">
+                    <svg fill="currentColor" class="text-gray-200 w-5 h-5 inline-block h-4 w-4 ltr:mr-2 rtl:ml-2 bi bi-card-list" viewbox="0 0 18 18" fill="none" class="inline-block h-4 w-4 ltr:mr-2 rtl:ml-2 bi bi-list-nested" viewBox="0 0 18 18">
+                      <path fill-rule="evenodd" d="M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                    <i class="mr-2 fas fa-stream"></i>
+                  <span>Mahasiswa</span>
+                      <i class="transform transition duration-300 fas fa-chevron-down" :class="{ 'rotate-0': selected == 2, 'ltr:-rotate-90 rtl:rotate-90': !(selected == 2) }"></i>
+                    </span>
+                  </a>
+                  <ul x-show="selected == 2" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" class="block rounded rounded-t-none top-full z-50 ltr:pl-7 rtl:pr-7 py-0.5 ltr:text-left rtl:text-right mb-1 font-normal">
+                    <li class="relative" x-data="{ open: false }" @keydown.escape.stop="open = false" @click.away="open = false">
+                    <a :class="{ 'text-indigo-500': open }" @click="open = !open" aria-haspopup="true" x-bind:aria-expanded="open" id="mobiledrop-91" class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded block py-2.5 px-6 hover:text-indigo-500 dark:hover:text-gray-300" href="javascript:;">
+                        Mahasiswa PMB
+                        <span class="inline-block ltr:float-right rtl:float-left">
+                          <i class="transform transition duration-300 fas fa-chevron-down" :class="{ 'rotate-0': open, 'ltr:-rotate-90 rtl:rotate-90': !open }"></i>
+                        </span>
+                      </a>
+                      <ul class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded rounded-t-none top-full z-50 ltr:pl-7 rtl:pr-7 py-0.5 ltr:text-left rtl:text-right mb-1 font-normal" x-show="open" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" role="menu" aria-orientation="vertical" aria-labelledby="mobiledrop-91">
+                        <li class="relative">
+                          <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500 dark:hover:text-gray-300" href="basic.html#">Jumlah Pendaftar</a>
+                        </li>
+                      </ul>
+                      <ul class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded rounded-t-none top-full z-50 ltr:pl-7 rtl:pr-7 py-0.5 ltr:text-left rtl:text-right mb-1 font-normal" x-show="open" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" role="menu" aria-orientation="vertical" aria-labelledby="mobiledrop-91">
+                        <li class="relative">
+                          <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500 dark:hover:text-gray-300" href="basic.html#">Jumlah Diterima</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="relative" x-data="{ open: false }" @keydown.escape.stop="open = false" @click.away="open = false">
+                    <a :class="{ 'text-indigo-500': open }" @click="open = !open" aria-haspopup="true" x-bind:aria-expanded="open" id="mobiledrop-91" class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded block py-2.5 px-6 hover:text-indigo-500 dark:hover:text-gray-300" href="javascript:;">
+                        Mahasiswa Aktif
+                        <span class="inline-block ltr:float-right rtl:float-left">
+                          <i class="transform transition duration-300 fas fa-chevron-down" :class="{ 'rotate-0': open, 'ltr:-rotate-90 rtl:rotate-90': !open }"></i>
+                        </span>
+                      </a>
+                      <ul class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded rounded-t-none top-full z-50 ltr:pl-7 rtl:pr-7 py-0.5 ltr:text-left rtl:text-right mb-1 font-normal" x-show="open" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" role="menu" aria-orientation="vertical" aria-labelledby="mobiledrop-91">
+                        <li class="relative">
+                          <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500 dark:hover:text-gray-300" href="basic.html#">Per Angkatan (Grafik)</a>
+                        </li>
+                      </ul>
+                      <ul class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded rounded-t-none top-full z-50 ltr:pl-7 rtl:pr-7 py-0.5 ltr:text-left rtl:text-right mb-1 font-normal" x-show="open" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" role="menu" aria-orientation="vertical" aria-labelledby="mobiledrop-91">
+                        <li class="relative">
+                          <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500 dark:hover:text-gray-300" href="basic.html#">Per Angkatan (Data Tabel)</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="relative" x-data="{ open: false }" @keydown.escape.stop="open = false" @click.away="open = false">
+                      <a :class="{ 'text-indigo-500': open }" @click="open = !open" aria-haspopup="true" x-bind:aria-expanded="open" id="mobiledrop-91" class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded block py-2.5 px-6 hover:text-indigo-500 dark:hover:text-gray-300" href="javascript:;">
+                          Mahasiswa Lulusan
+                          <span class="inline-block ltr:float-right rtl:float-left">
+                            <i class="transform transition duration-300 fas fa-chevron-down" :class="{ 'rotate-0': open, 'ltr:-rotate-90 rtl:rotate-90': !open }"></i>
+                          </span>
+                        </a>
+                        <ul class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded rounded-t-none top-full z-50 ltr:pl-7 rtl:pr-7 py-0.5 ltr:text-left rtl:text-right mb-1 font-normal" x-show="open" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" role="menu" aria-orientation="vertical" aria-labelledby="mobiledrop-91">
+                          <li class="relative">
+                            <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500 dark:hover:text-gray-300" href="basic.html#">Jumlah Lulusan</a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li class="relative" x-data="{ open: false }" @keydown.escape.stop="open = false" @click.away="open = false">
+                        <a :class="{ 'text-indigo-500': open }" @click="open = !open" aria-haspopup="true" x-bind:aria-expanded="open" id="mobiledrop-91" class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded block py-2.5 px-6 hover:text-indigo-500 dark:hover:text-gray-300" href="javascript:;">
+                            Mahasiswa Do
+                            <span class="inline-block ltr:float-right rtl:float-left">
+                              <i class="transform transition duration-300 fas fa-chevron-down" :class="{ 'rotate-0': open, 'ltr:-rotate-90 rtl:rotate-90': !open }"></i>
+                            </span>
+                          </a>
+                          <ul class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded rounded-t-none top-full z-50 ltr:pl-7 rtl:pr-7 py-0.5 ltr:text-left rtl:text-right mb-1 font-normal" x-show="open" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" role="menu" aria-orientation="vertical" aria-labelledby="mobiledrop-91">
+                            <li class="relative">
+                              <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500 dark:hover:text-gray-300" href="basic.html#">Jumlah Mahasiswa Do</a>
+                            </li>
+                          </ul>
+                        </li>
+
+                        <li class="relative" x-data="{ open: false }" @keydown.escape.stop="open = false" @click.away="open = false">
+                          <a :class="{ 'text-indigo-500': open }" @click="open = !open" aria-haspopup="true" x-bind:aria-expanded="open" id="mobiledrop-91" class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded block py-2.5 px-6 hover:text-indigo-500 dark:hover:text-gray-300" href="javascript:;">
+                              Mahasiswa Cuti
+                              <span class="inline-block ltr:float-right rtl:float-left">
+                                <i class="transform transition duration-300 fas fa-chevron-down" :class="{ 'rotate-0': open, 'ltr:-rotate-90 rtl:rotate-90': !open }"></i>
+                              </span>
+                            </a>
+                            <ul class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded rounded-t-none top-full z-50 ltr:pl-7 rtl:pr-7 py-0.5 ltr:text-left rtl:text-right mb-1 font-normal" x-show="open" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" role="menu" aria-orientation="vertical" aria-labelledby="mobiledrop-91">
+                              <li class="relative">
+                                <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500 dark:hover:text-gray-300" href="basic.html#">Jumlah Mahasiswa Cuti</a>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li class="relative" x-data="{ open: false }" @keydown.escape.stop="open = false" @click.away="open = false">
+                            <a :class="{ 'text-indigo-500': open }" @click="open = !open" aria-haspopup="true" x-bind:aria-expanded="open" id="mobiledrop-91" class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded block py-2.5 px-6 hover:text-indigo-500 dark:hover:text-gray-300" href="javascript:;">
+                                Mahasiswa IPK
+                                <span class="inline-block ltr:float-right rtl:float-left">
+                                  <i class="transform transition duration-300 fas fa-chevron-down" :class="{ 'rotate-0': open, 'ltr:-rotate-90 rtl:rotate-90': !open }"></i>
+                                </span>
+                              </a>
+                              <ul class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded rounded-t-none top-full z-50 ltr:pl-7 rtl:pr-7 py-0.5 ltr:text-left rtl:text-right mb-1 font-normal" x-show="open" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" role="menu" aria-orientation="vertical" aria-labelledby="mobiledrop-91">
+                                <li class="relative">
+                                  <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500 dark:hover:text-gray-300" href="basic.html#">Detail Tabel</a>
+                                </li>
+                              </ul>
+                              <ul class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded rounded-t-none top-full z-50 ltr:pl-7 rtl:pr-7 py-0.5 ltr:text-left rtl:text-right mb-1 font-normal" x-show="open" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" role="menu" aria-orientation="vertical" aria-labelledby="mobiledrop-91">
+                                <li class="relative">
+                                  <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500 dark:hover:text-gray-300" href="basic.html#">Angkatan</a>
+                                </li>
+                              </ul>
+                            </li>
+                  </ul>
+                </li>
+                    <!--stop multi levelmen-->
+
+
+                <!--multi level mennnn-->
+                <li class="relative">
+                  
+                  <a  :class="{ 'text-indigo-500 dark:text-gray-300': selected == 4 }" @click="selected !== 4 ? selected = 4 : selected = null" class="flex items-center pl-3 py-3 pr-2 text-gray-500 hover:bg-indigo-50 block rounded py-2.5 px-6 hover:text-indigo-500 dark:hover:text-gray-300" href="javascript:;">
+                    <svg fill="currentColor" class="text-gray-200 w-5 h-5 inline-block h-4 w-4 ltr:mr-2 rtl:ml-2 bi bi-card-list" viewbox="0 0 18 18" fill="none" class="inline-block h-4 w-4 ltr:mr-2 rtl:ml-2 bi bi-list-nested" viewBox="0 0 18 18">
+                      <path fill-rule="evenodd" d="M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                    <i class="mr-2 fas fa-stream"></i>
+                  <span>SDM</span>
+                      <i class="transform transition duration-300 fas fa-chevron-down" :class="{ 'rotate-0': selected == 4, 'ltr:-rotate-90 rtl:rotate-90': !(selected == 3) }"></i>
+                    </span>
+                  </a>
+                  <ul x-show="selected == 4" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" class="block rounded rounded-t-none top-full z-50 ltr:pl-7 rtl:pr-7 py-0.5 ltr:text-left rtl:text-right mb-1 font-normal">
+                    <li class="relative" x-data="{ open: false }" @keydown.escape.stop="open = false" @click.away="open = false">
+                    <a :class="{ 'text-indigo-500': open }" @click="open = !open" aria-haspopup="true" x-bind:aria-expanded="open" id="mobiledrop-91" class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded block py-2.5 px-6 hover:text-indigo-500 dark:hover:text-gray-300" href="javascript:;">
+                        Mahasiswa PMB
+                        <span class="inline-block ltr:float-right rtl:float-left">
+                          <i class="transform transition duration-300 fas fa-chevron-down" :class="{ 'rotate-0': open, 'ltr:-rotate-90 rtl:rotate-90': !open }"></i>
+                        </span>
+                      </a>
+                      <ul class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded rounded-t-none top-full z-50 ltr:pl-7 rtl:pr-7 py-0.5 ltr:text-left rtl:text-right mb-1 font-normal" x-show="open" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" role="menu" aria-orientation="vertical" aria-labelledby="mobiledrop-91">
+                        <li class="relative">
+                          <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500 dark:hover:text-gray-300" href="basic.html#">Jumlah Pendaftar</a>
+                        </li>
+                      </ul>
+                      <ul class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded rounded-t-none top-full z-50 ltr:pl-7 rtl:pr-7 py-0.5 ltr:text-left rtl:text-right mb-1 font-normal" x-show="open" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" role="menu" aria-orientation="vertical" aria-labelledby="mobiledrop-91">
+                        <li class="relative">
+                          <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500 dark:hover:text-gray-300" href="basic.html#">Jumlah Diterima</a>
+                        </li>
+                      </ul>
+                      <ul class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded rounded-t-none top-full z-50 ltr:pl-7 rtl:pr-7 py-0.5 ltr:text-left rtl:text-right mb-1 font-normal" x-show="open" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" role="menu" aria-orientation="vertical" aria-labelledby="mobiledrop-91">
+                        <li class="relative">
+                          <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500 dark:hover:text-gray-300" href="basic.html#">Jumlah Diterima</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a class="flex items-center pl-4 py-2 pr-2 text-gray-500 hover:bg-indigo-50 rounded" href="#">
+                        <span class="inline-block mr-1">
+                          <svg class="text-gray-200 w-5 h-5" viewbox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          </svg>
+                        </span>
+                        <span>...</span>
+                      </a>
+                    </li>
+
+                    <li class="relative" x-data="{ open: false }" @keydown.escape.stop="open = false" @click.away="open = false">
+                      <a :class="{ 'text-indigo-500': open }" @click="open = !open" aria-haspopup="true" x-bind:aria-expanded="open" id="mobiledrop-91" class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded block py-2.5 px-6 hover:text-indigo-500 dark:hover:text-gray-300" href="javascript:;">
+                          Tenaga Pendidikan
+                          <span class="inline-block ltr:float-right rtl:float-left">
+                            <i class="transform transition duration-300 fas fa-chevron-down" :class="{ 'rotate-0': open, 'ltr:-rotate-90 rtl:rotate-90': !open }"></i>
+                          </span>
+                        </a>
+                        <ul class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded rounded-t-none top-full z-50 ltr:pl-7 rtl:pr-7 py-0.5 ltr:text-left rtl:text-right mb-1 font-normal" x-show="open" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" role="menu" aria-orientation="vertical" aria-labelledby="mobiledrop-91">
+                          <li class="relative">
+                            <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500 dark:hover:text-gray-300" href="basic.html#">Jumlah Pendaftar</a>
+                          </li>
+                        </ul>
+                        <ul class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded rounded-t-none top-full z-50 ltr:pl-7 rtl:pr-7 py-0.5 ltr:text-left rtl:text-right mb-1 font-normal" x-show="open" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" role="menu" aria-orientation="vertical" aria-labelledby="mobiledrop-91">
+                          <li class="relative">
+                            <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500 dark:hover:text-gray-300" href="basic.html#">Jumlah Diterima</a>
+                          </li>
+                        </ul>
+                        <ul class="flex items-center pl-10 py- pr-2 text-gray-500 hover:bg-indigo-50 block rounded rounded-t-none top-full z-50 ltr:pl-7 rtl:pr-7 py-0.5 ltr:text-left rtl:text-right mb-1 font-normal" x-show="open" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" role="menu" aria-orientation="vertical" aria-labelledby="mobiledrop-91">
+                          <li class="relative">
+                            <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500 dark:hover:text-gray-300" href="basic.html#">Jumlah Diterima</a>
+                          </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                    <!--stop multi levelmen-->
+
+                
+                <!--level biasa-->
+                <li class="relative">
+                  <a  :class="{ 'text-indigo-500 dark:text-gray-300': selected == 5 }" @click="selected !== 5 ? selected = 5 : selected = null" class="flex items-center pl-3 py-3 pr-2 text-gray-500 hover:bg-indigo-50 rounded block py-2.5 px-6 hover:text-indigo-500 dark:hover:text-gray-300" href="javascript:;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="text-gray-200 w-5 h-5 inline-block h-4 w-4 ltr:mr-2 rtl:ml-2 bi bi-card-list" viewbox="0 0 18 18" fill="none">
+                      <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                      <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                    </svg>
+                  <i class="mr-2 fas fa-list-alt"></i> 
+                    <span>Luaran</span>
+                    <span class="inline-block ltr:float-right rtl:float-left">
+                    <i class="transform transition duration-300 fas fa-chevron-down" :class="{ 'rotate-0': selected == 5, 'ltr:-rotate-90 rtl:rotate-90': !(selected == 5) }"></i> 
+                    </span>
+                  </a>
+                  <ul x-show="selected == 5" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" class="block rounded rounded-t-none top-full z-50 ltr:pl-7 rtl:pr-7 py-0.5 ltr:text-left rtl:text-right mb-1 font-normal">
+                    <li class="relative">
+                      <li>
+                        <a class="flex items-center pl-4 py-2 pr-2 text-gray-500 hover:bg-indigo-50 rounded" href="#">
+                          <span class="inline-block mr-1">
+                            <svg class="text-gray-200 w-5 h-5" viewbox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                          </span>
+                          <span>Mahasiswa</span>
+                        </a>
+                      </li>                    
+                    </li>
+                    <li class="relative">
+                      <li>
+                        <a class="flex items-center pl-4 py-2 pr-2 text-gray-500 hover:bg-indigo-50 rounded" href="#">
+                          <span class="inline-block mr-1">
+                            <svg class="text-gray-200 w-5 h-5" viewbox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                          </span>
+                          <span>Dosen</span>
+                        </a>
+                      </li>                    
+                    </li>
+                  </ul>
+                </li>
+                
+                <li class="relative">
+                  <a  :class="{ 'text-indigo-500 dark:text-gray-300': selected == 6 }" @click="selected !== 6 ? selected = 6 : selected = null" class="flex items-center pl-3 py-3 pr-2 text-gray-500 hover:bg-indigo-50 rounded block py-2.5 px-6 hover:text-indigo-500 dark:hover:text-gray-300" href="javascript:;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="text-gray-200 w-5 h-5 inline-block h-4 w-4 ltr:mr-2 rtl:ml-2 bi bi-card-list" viewbox="0 0 18 18" fill="none">
+                      <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                      <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                    </svg>
+                  <i class="mr-2 fas fa-list-alt"></i> 
+                    <span>Kurikulum</span>
+                    <span class="inline-block ltr:float-right rtl:float-left">
+                    <i class="transform transition duration-300 fas fa-chevron-down" :class="{ 'rotate-0': selected == 6, 'ltr:-rotate-90 rtl:rotate-90': !(selected == 6) }"></i> 
+                    </span>
+                  </a>
+                  <ul x-show="selected == 6" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" class="block rounded rounded-t-none top-full z-50 ltr:pl-7 rtl:pr-7 py-0.5 ltr:text-left rtl:text-right mb-1 font-normal">
+                    <li class="relative">
+                      <li>
+                        <a class="flex items-center pl-4 py-2 pr-2 text-gray-500 hover:bg-indigo-50 rounded" href="#">
+                          <span class="inline-block mr-1">
+                            <svg class="text-gray-200 w-5 h-5" viewbox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                          </span>
+                          <span>Inti</span>
+                        </a>
+                      </li>                    
+                    </li>
+                    <li class="relative">
+                      <li>
+                        <a class="flex items-center pl-4 py-2 pr-2 text-gray-500 hover:bg-indigo-50 rounded" href="#">
+                          <span class="inline-block mr-1">
+                            <svg class="text-gray-200 w-5 h-5" viewbox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                          </span>
+                          <span>Umum</span>
+                        </a>
+                      </li>                    
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a class="flex items-center pl-3.5 py-2 pr-2 text-gray-500 hover:bg-indigo-50 rounded block py-2.5 px-6 hover:text-indigo-500 dark:hover:text-gray-300" href="#">
+                    <span class="inline-block mr-2.5">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="inline-block h-4 w-4 ltr:mr-2 rtl:ml-2 bi bi-columns-gap" viewBox="0 0 18 18">
+                        <path d="M6 1v3H1V1h5zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12v3h-5v-3h5zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8v7H1V8h5zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6v7h-5V1h5zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z"/>
+                      </svg>
+                    </span>
+                    <span>Sarana dan Prasarana</span>
+                  </a>
+                </li>
+
+                <li class="relative">
+                  <a  :class="{ 'text-indigo-500 dark:text-gray-300': selected == 7 }" @click="selected !== 7 ? selected = 7 : selected = null" class="flex items-center pl-3 py-3 pr-2 text-gray-500 hover:bg-indigo-50 rounded block py-2.5 px-6 hover:text-indigo-500 dark:hover:text-gray-300" href="javascript:;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="text-gray-200 w-5 h-5 inline-block h-4 w-4 ltr:mr-2 rtl:ml-2 bi bi-card-list" viewbox="0 0 18 18" fill="none">
+                      <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                      <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                    </svg>
+                  <i class="mr-2 fas fa-list-alt"></i> 
+                    <span>Anggaran</span>
+                    <span class="inline-block ltr:float-right rtl:float-left">
+                    <i class="transform transition duration-300 fas fa-chevron-down" :class="{ 'rotate-0': selected == 7, 'ltr:-rotate-90 rtl:rotate-90': !(selected == 7) }"></i> 
+                    </span>
+                  </a>
+                  <ul x-show="selected == 7" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" class="block rounded rounded-t-none top-full z-50 ltr:pl-7 rtl:pr-7 py-0.5 ltr:text-left rtl:text-right mb-1 font-normal">
+                    <li class="relative">
+                      <li>
+                        <a class="flex items-center pl-4 py-2 pr-2 text-gray-500 hover:bg-indigo-50 rounded" href="#">
+                          <span class="inline-block mr-1">
+                            <svg class="text-gray-200 w-5 h-5" viewbox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                          </span>
+                          <span>Anggaran Rka 2018</span>
+                        </a>
+                      </li>                    
+                    </li>
+                    <li class="relative">
+                      <li>
+                        <a class="flex items-center pl-4 py-2 pr-2 text-gray-500 hover:bg-indigo-50 rounded" href="#">
+                          <span class="inline-block mr-1">
+                            <svg class="text-gray-200 w-5 h-5" viewbox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                          </span>
+                          <span>Anggaran Rka 2019</span>
+                        </a>
+                      </li>                    
+                    </li>
+                    <li class="relative">
+                      <li>
+                        <a class="flex items-center pl-4 py-2 pr-2 text-gray-500 hover:bg-indigo-50 rounded" href="#">
+                          <span class="inline-block mr-1">
+                            <svg class="text-gray-200 w-5 h-5" viewbox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                          </span>
+                          <span>Anggaran Rka 2020</span>
+                        </a>
+                      </li>                    
+                    </li>
+                    <li class="relative">
+                      <li>
+                        <a class="flex items-center pl-4 py-2 pr-2 text-gray-500 hover:bg-indigo-50 rounded" href="#">
+                          <span class="inline-block mr-1">
+                            <svg class="text-gray-200 w-5 h-5" viewbox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                          </span>
+                          <span>Anggaran Rka 2021</span>
+                        </a>
+                      </li>                    
+                    </li>
+                    <li class="relative">
+                      <li>
+                        <a class="flex items-center pl-4 py-2 pr-2 text-gray-500 hover:bg-indigo-50 rounded" href="#">
+                          <span class="inline-block mr-1">
+                            <svg class="text-gray-200 w-5 h-5" viewbox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                          </span>
+                          <span>Anggaran Rka 2022</span>
+                        </a>
+                      </li>                    
+                    </li>
+                    <li class="relative">
+                      <li>
+                        <a class="flex items-center pl-4 py-2 pr-2 text-gray-500 hover:bg-indigo-50 rounded" href="#">
+                          <span class="inline-block mr-1">
+                            <svg class="text-gray-200 w-5 h-5" viewbox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                          </span>
+                          <span>Anggaran Rka 2023</span>
+                        </a>
+                      </li>                    
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a class="flex items-center pl-3.5 py-2 pr-2 text-gray-500 hover:bg-indigo-50 rounded block py-1 px-4 hover:text-indigo-500 dark:hover:text-gray-300" href="#">
+                    <span class="inline-block mr-2.5">
+                      <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="inline-block h-4 w-4 ltr:mr-2 rtl:ml-2 bi bi-columns-gap" viewBox="0 0 18 18">
+                        <path d="M16.7666 6.9583L15.1916 6.4333L15.9332 4.94996C16.0084 4.7947 16.0336 4.61993 16.0052 4.44977C15.9768 4.27961 15.8964 4.12245 15.7749 3.99996L13.9999 2.22496C13.8768 2.1017 13.7181 2.02013 13.5462 1.99173C13.3743 1.96333 13.1978 1.98953 13.0416 2.06663L11.5582 2.8083L11.0332 1.2333C10.9778 1.06912 10.8725 0.926317 10.7321 0.824752C10.5917 0.723187 10.4232 0.667916 10.2499 0.666629H7.7499C7.5752 0.666178 7.40477 0.720645 7.26271 0.82233C7.12065 0.924016 7.01414 1.06778 6.95823 1.2333L6.43323 2.8083L4.9499 2.06663C4.79464 1.99145 4.61987 1.9663 4.44971 1.99466C4.27955 2.02302 4.12239 2.10349 3.9999 2.22496L2.2249 3.99996C2.10164 4.1231 2.02007 4.28177 1.99167 4.45368C1.96327 4.62558 1.98946 4.80205 2.06657 4.9583L2.80823 6.44163L1.23323 6.96663C1.06906 7.02208 0.926256 7.12732 0.824691 7.26772C0.723126 7.40812 0.667855 7.57668 0.666568 7.74996V10.25C0.666117 10.4247 0.720584 10.5951 0.822269 10.7372C0.923955 10.8792 1.06772 10.9857 1.23323 11.0416L2.80823 11.5666L2.06657 13.05C1.99138 13.2052 1.96624 13.38 1.9946 13.5502C2.02296 13.7203 2.10343 13.8775 2.2249 14L3.9999 15.775C4.12304 15.8982 4.28171 15.9798 4.45361 16.0082C4.62551 16.0366 4.80199 16.0104 4.95823 15.9333L6.44157 15.1916L6.96657 16.7666C7.02247 16.9321 7.12898 17.0759 7.27104 17.1776C7.41311 17.2793 7.58353 17.3337 7.75823 17.3333H10.2582C10.4329 17.3337 10.6034 17.2793 10.7454 17.1776C10.8875 17.0759 10.994 16.9321 11.0499 16.7666L11.5749 15.1916L13.0582 15.9333C13.2125 16.0066 13.3856 16.0307 13.554 16.0024C13.7224 15.9741 13.8781 15.8947 13.9999 15.775L15.7749 14C15.8982 13.8768 15.9797 13.7182 16.0081 13.5463C16.0365 13.3743 16.0103 13.1979 15.9332 13.0416L15.1916 11.5583L16.7666 11.0333C16.9307 10.9778 17.0735 10.8726 17.1751 10.7322C17.2767 10.5918 17.3319 10.4232 17.3332 10.25V7.74996C17.3337 7.57526 17.2792 7.40483 17.1775 7.26277C17.0758 7.12071 16.9321 7.0142 16.7666 6.9583ZM15.6666 9.64996L14.6666 9.9833C14.4366 10.0579 14.2256 10.1816 14.0483 10.3459C13.8709 10.5102 13.7314 10.711 13.6395 10.9346C13.5475 11.1582 13.5053 11.3991 13.5157 11.6406C13.5261 11.8821 13.589 12.1185 13.6999 12.3333L14.1749 13.2833L13.2582 14.2L12.3332 13.7C12.1195 13.5935 11.8854 13.5342 11.6468 13.526C11.4082 13.5179 11.1706 13.5611 10.9502 13.6528C10.7297 13.7445 10.5315 13.8824 10.369 14.0573C10.2065 14.2322 10.0835 14.44 10.0082 14.6666L9.6749 15.6666H8.3499L8.01657 14.6666C7.94198 14.4367 7.81826 14.2257 7.65398 14.0483C7.48971 13.871 7.28882 13.7315 7.06525 13.6395C6.84168 13.5475 6.60078 13.5053 6.35925 13.5158C6.11773 13.5262 5.88137 13.5891 5.66657 13.7L4.71657 14.175L3.7999 13.2583L4.2999 12.3333C4.41081 12.1185 4.47367 11.8821 4.48411 11.6406C4.49454 11.3991 4.45232 11.1582 4.36035 10.9346C4.26838 10.711 4.12888 10.5102 3.95152 10.3459C3.77416 10.1816 3.56319 10.0579 3.33323 9.9833L2.33323 9.64996V8.34996L3.33323 8.01663C3.56319 7.94204 3.77416 7.81832 3.95152 7.65404C4.12888 7.48977 4.26838 7.28888 4.36035 7.06531C4.45232 6.84174 4.49454 6.60084 4.48411 6.35932C4.47367 6.11779 4.41081 5.88143 4.2999 5.66663L3.8249 4.74163L4.74157 3.82496L5.66657 4.29996C5.88137 4.41087 6.11773 4.47373 6.35925 4.48417C6.60078 4.49461 6.84168 4.45238 7.06525 4.36041C7.28882 4.26845 7.48971 4.12894 7.65398 3.95158C7.81826 3.77422 7.94198 3.56325 8.01657 3.3333L8.3499 2.3333H9.6499L9.98323 3.3333C10.0578 3.56325 10.1815 3.77422 10.3458 3.95158C10.5101 4.12894 10.711 4.26845 10.9346 4.36041C11.1581 4.45238 11.399 4.49461 11.6405 4.48417C11.8821 4.47373 12.1184 4.41087 12.3332 4.29996L13.2832 3.82496L14.1999 4.74163L13.6999 5.66663C13.5934 5.88033 13.5341 6.11442 13.526 6.35304C13.5178 6.59165 13.5611 6.82924 13.6527 7.0497C13.7444 7.27016 13.8823 7.46835 14.0573 7.63086C14.2322 7.79337 14.44 7.9164 14.6666 7.99163L15.6666 8.32496V9.64996ZM8.9999 5.66663C8.34063 5.66663 7.69616 5.86213 7.148 6.2284C6.59984 6.59467 6.17259 7.11526 5.9203 7.72435C5.66801 8.33344 5.602 9.00366 5.73062 9.65026C5.85923 10.2969 6.1767 10.8908 6.64288 11.357C7.10905 11.8232 7.703 12.1406 8.3496 12.2692C8.9962 12.3979 9.66643 12.3319 10.2755 12.0796C10.8846 11.8273 11.4052 11.4 11.7715 10.8519C12.1377 10.3037 12.3332 9.65923 12.3332 8.99996C12.3332 8.11591 11.982 7.26806 11.3569 6.64294C10.7318 6.01782 9.88396 5.66663 8.9999 5.66663ZM8.9999 10.6666C8.67027 10.6666 8.34803 10.5689 8.07395 10.3857C7.79987 10.2026 7.58625 9.94231 7.4601 9.63777C7.33396 9.33322 7.30095 8.99811 7.36526 8.67481C7.42957 8.35151 7.5883 8.05454 7.82139 7.82145C8.05448 7.58836 8.35145 7.42963 8.67475 7.36532C8.99805 7.30101 9.33316 7.33402 9.63771 7.46016C9.94225 7.58631 10.2025 7.79993 10.3857 8.07401C10.5688 8.34809 10.6666 8.67033 10.6666 8.99996C10.6666 9.44199 10.491 9.86591 10.1784 10.1785C9.86585 10.491 9.44193 10.6666 8.9999 10.6666Z" fill="currentColor"/>
+                      </svg>
+                    </span>
+                    <span>Pengaturan</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a class="flex items-center pl-3.5 py-2 pr-2 text-gray-500 hover:bg-indigo-50 rounded block py-1 px-4 hover:text-indigo-500 dark:hover:text-gray-300" href="#">
+                    <span class="inline-block mr-2.5">
+                      <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="inline-block h-4 w-4 ltr:mr-2 rtl:ml-2 bi bi-columns-gap" viewBox="0 0 18 18">
+                      <path d="M3.33368 9.99996C3.33368 10.221 3.42148 10.4329 3.57776 10.5892C3.73404 10.7455 3.946 10.8333 4.16701 10.8333H10.492L8.57535 12.7416C8.49724 12.8191 8.43524 12.9113 8.39294 13.0128C8.35063 13.1144 8.32885 13.2233 8.32885 13.3333C8.32885 13.4433 8.35063 13.5522 8.39294 13.6538C8.43524 13.7553 8.49724 13.8475 8.57535 13.925C8.65281 14.0031 8.74498 14.0651 8.84653 14.1074C8.94808 14.1497 9.057 14.1715 9.16701 14.1715C9.27702 14.1715 9.38594 14.1497 9.48749 14.1074C9.58904 14.0651 9.68121 14.0031 9.75868 13.925L13.092 10.5916C13.1679 10.5124 13.2273 10.4189 13.267 10.3166C13.3504 10.1137 13.3504 9.88618 13.267 9.68329C13.2273 9.581 13.1679 9.48755 13.092 9.40829L9.75868 6.07496C9.68098 5.99726 9.58874 5.93563 9.48722 5.89358C9.3857 5.85153 9.27689 5.82988 9.16701 5.82988C9.05713 5.82988 8.94832 5.85153 8.8468 5.89358C8.74529 5.93563 8.65304 5.99726 8.57535 6.07496C8.49765 6.15266 8.43601 6.2449 8.39396 6.34642C8.35191 6.44794 8.33027 6.55674 8.33027 6.66663C8.33027 6.77651 8.35191 6.88532 8.39396 6.98683C8.43601 7.08835 8.49765 7.18059 8.57535 7.25829L10.492 9.16663H4.16701C3.946 9.16663 3.73404 9.25442 3.57776 9.4107C3.42148 9.56698 3.33368 9.77895 3.33368 9.99996ZM14.167 1.66663H5.83368C5.17064 1.66663 4.53475 1.93002 4.06591 2.39886C3.59707 2.8677 3.33368 3.50358 3.33368 4.16663V6.66663C3.33368 6.88764 3.42148 7.0996 3.57776 7.25588C3.73404 7.41216 3.946 7.49996 4.16701 7.49996C4.38803 7.49996 4.59999 7.41216 4.75627 7.25588C4.91255 7.0996 5.00035 6.88764 5.00035 6.66663V4.16663C5.00035 3.94561 5.08814 3.73365 5.24442 3.57737C5.4007 3.42109 5.61267 3.33329 5.83368 3.33329H14.167C14.388 3.33329 14.6 3.42109 14.7563 3.57737C14.9125 3.73365 15.0003 3.94561 15.0003 4.16663V15.8333C15.0003 16.0543 14.9125 16.2663 14.7563 16.4225C14.6 16.5788 14.388 16.6666 14.167 16.6666H5.83368C5.61267 16.6666 5.4007 16.5788 5.24442 16.4225C5.08814 16.2663 5.00035 16.0543 5.00035 15.8333V13.3333C5.00035 13.1123 4.91255 12.9003 4.75627 12.744C4.59999 12.5878 4.38803 12.5 4.16701 12.5C3.946 12.5 3.73404 12.5878 3.57776 12.744C3.42148 12.9003 3.33368 13.1123 3.33368 13.3333V15.8333C3.33368 16.4963 3.59707 17.1322 4.06591 17.6011C4.53475 18.0699 5.17064 18.3333 5.83368 18.3333H14.167C14.8301 18.3333 15.4659 18.0699 15.9348 17.6011C16.4036 17.1322 16.667 16.4963 16.667 15.8333V4.16663C16.667 3.50358 16.4036 2.8677 15.9348 2.39886C15.4659 1.93002 14.8301 1.66663 14.167 1.66663Z" fill="currentColor"></path>
+                      </svg>
+                    </span>
+                    <span>Keluar</span>
+                  </a>
+                </li>
+                </ul>
+              </ul>
+              </ul>
+              
+            </div>
+          </nav>
+        </div>
+        <div class="mx-auto lg:ml-80">
+      <div class="py-8 px-6 bg-white">
+        <div class="container px-4 mx-auto">
+          <h2 class="text-2xl font-bold">Welcome, John Smith 👋</h2>
+        </div>
+      </div>
+      
+      <div class="container px-4 mx-auto">
+      <section class="py-8">
+        <div class="container px-4 mx-auto">
+          <div class="py-4 bg-white rounded">
+            <div class="flex px-6 pb-4 border-b">
+              <h3 class="text-xl font-bold">Task overview</h3>
+              <div class="ml-auto">
+                <select class="bg-indigo-500 rounded-md text-xs text-white py-2 px-3" name="" id="">
+                  <option value="1">Change</option>
+                  <option value="2">Sort</option>
+                  <option value="3">Add</option>
+                </select>
+              </div>
+            </div>
+            <div class="px-4 py-3 text-xs font-medium">
+              <div class="flex mb-3 px-4 text-gray-500">
+                <h4 class="mr-auto">Task Name</h4>
+                <h4>Action</h4>
+              </div>
+              <div class="flex p-4 bg-gray-50 rounded">
+                <span class="inline-flex w-8 h-8 mr-2 justify-center items-center bg-blue-50 rounded">
+                  <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.0675 1.37468C15.0374 1.26049 14.9775 1.15633 14.894 1.07284C14.8106 0.989341 14.7064 0.929498 14.5922 0.899417C13.2246 0.54421 11.7845 0.582467 10.4377 1.00979C9.09094 1.4371 7.89221 2.2361 6.97958 3.31479L6.23629 4.19734L4.49976 3.77836C4.07759 3.63118 3.61642 3.64173 3.20141 3.80806C2.78641 3.97439 2.44561 4.28526 2.24195 4.68328L0.775154 7.28321C0.72376 7.37428 0.694511 7.47616 0.689772 7.58062C0.685033 7.68509 0.704936 7.7892 0.747874 7.88454C0.790811 7.97989 0.855578 8.0638 0.936941 8.12949C1.0183 8.19518 1.11398 8.2408 1.21623 8.26268L3.26473 8.7018C3.09121 9.23004 2.9673 9.7733 2.89462 10.3245C2.88144 10.4258 2.8917 10.5287 2.92461 10.6254C2.95751 10.7221 3.01218 10.8099 3.08439 10.8821L5.15113 12.9489C5.21301 13.0108 5.28648 13.0599 5.36736 13.0934C5.44823 13.127 5.53492 13.1442 5.62246 13.1442C5.64167 13.1442 5.66087 13.1432 5.68041 13.1416C6.24397 13.0909 6.80068 12.9815 7.34145 12.8149L7.77057 14.8171C7.7925 14.9193 7.83816 15.0149 7.90386 15.0963C7.96956 15.1776 8.05346 15.2423 8.14879 15.2853C8.24413 15.3282 8.34822 15.3481 8.45266 15.3434C8.55711 15.3387 8.65899 15.3095 8.75007 15.2581L11.3536 13.7897C11.72 13.5671 12.0062 13.2338 12.171 12.8379C12.3358 12.4421 12.3705 12.0041 12.2702 11.5872L11.8244 9.7479L12.6492 8.98956C13.7319 8.07949 14.5339 6.8807 14.9621 5.53265C15.3902 4.18459 15.4267 2.74269 15.0675 1.37468ZM2.3816 7.14877L3.41903 5.30893C3.48347 5.18403 3.59325 5.08851 3.72587 5.04196C3.85848 4.99541 4.00388 5.00137 4.13225 5.0586L5.27719 5.33607L4.84385 5.8506C4.43303 6.34298 4.0777 6.87913 3.78431 7.44934L2.3816 7.14877ZM10.6951 12.6302L8.88453 13.6513L8.59819 12.3149C9.17861 12.0255 9.71936 11.6625 10.2071 11.235L10.7028 10.7792L10.9718 11.889C11.0066 12.026 10.9988 12.1704 10.9494 12.3029C10.8999 12.4354 10.8112 12.5496 10.6951 12.6302ZM11.7712 7.98668L9.31487 10.2442C8.34257 11.085 7.14328 11.6195 5.86793 11.7803L4.26506 10.1774C4.48034 8.89876 5.03287 7.70067 5.86565 6.70676L6.98454 5.37831C7.00318 5.35881 7.02058 5.33815 7.03663 5.31646L7.99325 4.18068C8.70057 3.34527 9.61691 2.71255 10.6487 2.34711C11.6805 1.98166 12.7909 1.8966 13.8663 2.1006C14.0752 3.17941 13.9911 4.29451 13.6226 5.32975C13.2541 6.36498 12.6148 7.28248 11.7712 7.98668ZM11.1559 3.8775C10.9581 3.8775 10.7648 3.93615 10.6003 4.04603C10.4359 4.15592 10.3077 4.31209 10.232 4.49482C10.1563 4.67755 10.1365 4.87861 10.1751 5.07259C10.2137 5.26658 10.309 5.44476 10.4488 5.58461C10.5887 5.72446 10.7668 5.8197 10.9608 5.85829C11.1548 5.89687 11.3559 5.87707 11.5386 5.80138C11.7213 5.7257 11.8775 5.59752 11.9874 5.43307C12.0973 5.26862 12.1559 5.07528 12.1559 4.8775C12.1559 4.74618 12.1301 4.61613 12.0798 4.4948C12.0296 4.37347 11.9559 4.26323 11.863 4.17036C11.7702 4.0775 11.6599 4.00384 11.5386 3.95359C11.4173 3.90334 11.2872 3.87748 11.1559 3.87749L11.1559 3.8775Z" fill="#2D70F5"></path>
+                  </svg>
+                </span>
+                <div class="text-xs">
+                  <p class="font-medium">New task name</p>
+                  <p class="text-gray-500">Meeting</p>
+                </div>
+                <button class="ml-auto">
+                  <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.4999 10C17.2789 10 17.0669 10.0878 16.9107 10.2441C16.7544 10.4004 16.6666 10.6123 16.6666 10.8333V15.8333C16.6666 16.0543 16.5788 16.2663 16.4225 16.4226C16.2662 16.5789 16.0543 16.6667 15.8332 16.6667H4.16658C3.94557 16.6667 3.73361 16.5789 3.57732 16.4226C3.42104 16.2663 3.33325 16.0543 3.33325 15.8333V4.16667C3.33325 3.94565 3.42104 3.73369 3.57732 3.57741C3.73361 3.42113 3.94557 3.33333 4.16658 3.33333H9.16658C9.38759 3.33333 9.59956 3.24554 9.75584 3.08926C9.91212 2.93298 9.99991 2.72101 9.99991 2.5C9.99991 2.27899 9.91212 2.06702 9.75584 1.91074C9.59956 1.75446 9.38759 1.66667 9.16658 1.66667H4.16658C3.50354 1.66667 2.86765 1.93006 2.39881 2.3989C1.92997 2.86774 1.66658 3.50363 1.66658 4.16667V15.8333C1.66658 16.4964 1.92997 17.1323 2.39881 17.6011C2.86765 18.0699 3.50354 18.3333 4.16658 18.3333H15.8332C16.4963 18.3333 17.1322 18.0699 17.601 17.6011C18.0699 17.1323 18.3332 16.4964 18.3332 15.8333V10.8333C18.3332 10.6123 18.2455 10.4004 18.0892 10.2441C17.9329 10.0878 17.7209 10 17.4999 10ZM4.99991 10.6333V14.1667C4.99991 14.3877 5.08771 14.5996 5.24399 14.7559C5.40027 14.9122 5.61223 15 5.83325 15H9.36658C9.47625 15.0006 9.58497 14.9796 9.6865 14.9381C9.78803 14.8967 9.88038 14.8356 9.95825 14.7583L15.7249 8.98333L18.0916 6.66667C18.1697 6.5892 18.2317 6.49703 18.274 6.39548C18.3163 6.29393 18.3381 6.18501 18.3381 6.075C18.3381 5.96499 18.3163 5.85607 18.274 5.75452C18.2317 5.65297 18.1697 5.5608 18.0916 5.48333L14.5582 1.90833C14.4808 1.83023 14.3886 1.76823 14.2871 1.72592C14.1855 1.68362 14.0766 1.66183 13.9666 1.66183C13.8566 1.66183 13.7477 1.68362 13.6461 1.72592C13.5446 1.76823 13.4524 1.83023 13.3749 1.90833L11.0249 4.26667L5.24158 10.0417C5.16435 10.1195 5.10324 10.2119 5.06177 10.3134C5.0203 10.4149 4.99928 10.5237 4.99991 10.6333ZM13.9666 3.675L16.3249 6.03333L15.1416 7.21667L12.7832 4.85833L13.9666 3.675ZM6.66658 10.975L11.6082 6.03333L13.9666 8.39167L9.02491 13.3333H6.66658V10.975Z" fill="#8594A5"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="flex p-4 rounded">
+                <span class="inline-flex w-8 h-8 mr-2 justify-center items-center bg-purple-50 rounded">
+                  <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.0675 1.37468C15.0374 1.26049 14.9775 1.15633 14.894 1.07284C14.8106 0.989341 14.7064 0.929498 14.5922 0.899417C13.2246 0.54421 11.7845 0.582467 10.4377 1.00979C9.09094 1.4371 7.89221 2.2361 6.97958 3.31479L6.23629 4.19734L4.49976 3.77836C4.07759 3.63118 3.61642 3.64173 3.20141 3.80806C2.78641 3.97439 2.44561 4.28526 2.24195 4.68328L0.775154 7.28321C0.72376 7.37428 0.694511 7.47616 0.689772 7.58062C0.685033 7.68509 0.704936 7.7892 0.747874 7.88454C0.790811 7.97989 0.855578 8.0638 0.936941 8.12949C1.0183 8.19518 1.11398 8.2408 1.21623 8.26268L3.26473 8.7018C3.09121 9.23004 2.9673 9.7733 2.89462 10.3245C2.88144 10.4258 2.8917 10.5287 2.92461 10.6254C2.95751 10.7221 3.01218 10.8099 3.08439 10.8821L5.15113 12.9489C5.21301 13.0108 5.28648 13.0599 5.36736 13.0934C5.44823 13.127 5.53492 13.1442 5.62246 13.1442C5.64167 13.1442 5.66087 13.1432 5.68041 13.1416C6.24397 13.0909 6.80068 12.9815 7.34145 12.8149L7.77057 14.8171C7.7925 14.9193 7.83816 15.0149 7.90386 15.0963C7.96956 15.1776 8.05346 15.2423 8.14879 15.2853C8.24413 15.3282 8.34822 15.3481 8.45266 15.3434C8.55711 15.3387 8.65899 15.3095 8.75007 15.2581L11.3536 13.7897C11.72 13.5671 12.0062 13.2338 12.171 12.8379C12.3358 12.4421 12.3705 12.0041 12.2702 11.5872L11.8244 9.7479L12.6492 8.98956C13.7319 8.07949 14.5339 6.8807 14.9621 5.53265C15.3902 4.18459 15.4267 2.74269 15.0675 1.37468ZM2.3816 7.14877L3.41903 5.30893C3.48347 5.18403 3.59325 5.08851 3.72587 5.04196C3.85848 4.99541 4.00388 5.00137 4.13225 5.0586L5.27719 5.33607L4.84385 5.8506C4.43303 6.34298 4.0777 6.87913 3.78431 7.44934L2.3816 7.14877ZM10.6951 12.6302L8.88453 13.6513L8.59819 12.3149C9.17861 12.0255 9.71936 11.6625 10.2071 11.235L10.7028 10.7792L10.9718 11.889C11.0066 12.026 10.9988 12.1704 10.9494 12.3029C10.8999 12.4354 10.8112 12.5496 10.6951 12.6302ZM11.7712 7.98668L9.31487 10.2442C8.34257 11.085 7.14328 11.6195 5.86793 11.7803L4.26506 10.1774C4.48034 8.89876 5.03287 7.70067 5.86565 6.70676L6.98454 5.37831C7.00318 5.35881 7.02058 5.33815 7.03663 5.31646L7.99325 4.18068C8.70057 3.34527 9.61691 2.71255 10.6487 2.34711C11.6805 1.98166 12.7909 1.8966 13.8663 2.1006C14.0752 3.17941 13.9911 4.29451 13.6226 5.32975C13.2541 6.36498 12.6148 7.28248 11.7712 7.98668ZM11.1559 3.8775C10.9581 3.8775 10.7648 3.93615 10.6003 4.04603C10.4359 4.15592 10.3077 4.31209 10.232 4.49482C10.1563 4.67755 10.1365 4.87861 10.1751 5.07259C10.2137 5.26658 10.309 5.44476 10.4488 5.58461C10.5887 5.72446 10.7668 5.8197 10.9608 5.85829C11.1548 5.89687 11.3559 5.87707 11.5386 5.80138C11.7213 5.7257 11.8775 5.59752 11.9874 5.43307C12.0973 5.26862 12.1559 5.07528 12.1559 4.8775C12.1559 4.74618 12.1301 4.61613 12.0798 4.4948C12.0296 4.37347 11.9559 4.26323 11.863 4.17036C11.7702 4.0775 11.6599 4.00384 11.5386 3.95359C11.4173 3.90334 11.2872 3.87748 11.1559 3.87749L11.1559 3.8775Z" fill="#382CDD"></path>
+                  </svg>
+                </span>
+                <div class="text-xs">
+                  <p class="font-medium">New task name</p>
+                  <p class="text-gray-500">Sales</p>
+                </div>
+                <button class="ml-auto">
+                  <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.4999 10C17.2789 10 17.0669 10.0878 16.9107 10.2441C16.7544 10.4004 16.6666 10.6123 16.6666 10.8333V15.8333C16.6666 16.0543 16.5788 16.2663 16.4225 16.4226C16.2662 16.5789 16.0543 16.6667 15.8332 16.6667H4.16658C3.94557 16.6667 3.73361 16.5789 3.57732 16.4226C3.42104 16.2663 3.33325 16.0543 3.33325 15.8333V4.16667C3.33325 3.94565 3.42104 3.73369 3.57732 3.57741C3.73361 3.42113 3.94557 3.33333 4.16658 3.33333H9.16658C9.38759 3.33333 9.59956 3.24554 9.75584 3.08926C9.91212 2.93298 9.99991 2.72101 9.99991 2.5C9.99991 2.27899 9.91212 2.06702 9.75584 1.91074C9.59956 1.75446 9.38759 1.66667 9.16658 1.66667H4.16658C3.50354 1.66667 2.86765 1.93006 2.39881 2.3989C1.92997 2.86774 1.66658 3.50363 1.66658 4.16667V15.8333C1.66658 16.4964 1.92997 17.1323 2.39881 17.6011C2.86765 18.0699 3.50354 18.3333 4.16658 18.3333H15.8332C16.4963 18.3333 17.1322 18.0699 17.601 17.6011C18.0699 17.1323 18.3332 16.4964 18.3332 15.8333V10.8333C18.3332 10.6123 18.2455 10.4004 18.0892 10.2441C17.9329 10.0878 17.7209 10 17.4999 10ZM4.99991 10.6333V14.1667C4.99991 14.3877 5.08771 14.5996 5.24399 14.7559C5.40027 14.9122 5.61223 15 5.83325 15H9.36658C9.47625 15.0006 9.58497 14.9796 9.6865 14.9381C9.78803 14.8967 9.88038 14.8356 9.95825 14.7583L15.7249 8.98333L18.0916 6.66667C18.1697 6.5892 18.2317 6.49703 18.274 6.39548C18.3163 6.29393 18.3381 6.18501 18.3381 6.075C18.3381 5.96499 18.3163 5.85607 18.274 5.75452C18.2317 5.65297 18.1697 5.5608 18.0916 5.48333L14.5582 1.90833C14.4808 1.83023 14.3886 1.76823 14.2871 1.72592C14.1855 1.68362 14.0766 1.66183 13.9666 1.66183C13.8566 1.66183 13.7477 1.68362 13.6461 1.72592C13.5446 1.76823 13.4524 1.83023 13.3749 1.90833L11.0249 4.26667L5.24158 10.0417C5.16435 10.1195 5.10324 10.2119 5.06177 10.3134C5.0203 10.4149 4.99928 10.5237 4.99991 10.6333ZM13.9666 3.675L16.3249 6.03333L15.1416 7.21667L12.7832 4.85833L13.9666 3.675ZM6.66658 10.975L11.6082 6.03333L13.9666 8.39167L9.02491 13.3333H6.66658V10.975Z" fill="#8594A5"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="flex p-4 bg-gray-50 rounded">
+                <span class="inline-flex w-8 h-8 mr-2 justify-center items-center bg-yellow-50 rounded">
+                  <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.0675 1.37468C15.0374 1.26049 14.9775 1.15633 14.894 1.07284C14.8106 0.989341 14.7064 0.929498 14.5922 0.899417C13.2246 0.54421 11.7845 0.582467 10.4377 1.00979C9.09094 1.4371 7.89221 2.2361 6.97958 3.31479L6.23629 4.19734L4.49976 3.77836C4.07759 3.63118 3.61642 3.64173 3.20141 3.80806C2.78641 3.97439 2.44561 4.28526 2.24195 4.68328L0.775154 7.28321C0.72376 7.37428 0.694511 7.47616 0.689772 7.58062C0.685033 7.68509 0.704936 7.7892 0.747874 7.88454C0.790811 7.97989 0.855578 8.0638 0.936941 8.12949C1.0183 8.19518 1.11398 8.2408 1.21623 8.26268L3.26473 8.7018C3.09121 9.23004 2.9673 9.7733 2.89462 10.3245C2.88144 10.4258 2.8917 10.5287 2.92461 10.6254C2.95751 10.7221 3.01218 10.8099 3.08439 10.8821L5.15113 12.9489C5.21301 13.0108 5.28648 13.0599 5.36736 13.0934C5.44823 13.127 5.53492 13.1442 5.62246 13.1442C5.64167 13.1442 5.66087 13.1432 5.68041 13.1416C6.24397 13.0909 6.80068 12.9815 7.34145 12.8149L7.77057 14.8171C7.7925 14.9193 7.83816 15.0149 7.90386 15.0963C7.96956 15.1776 8.05346 15.2423 8.14879 15.2853C8.24413 15.3282 8.34822 15.3481 8.45266 15.3434C8.55711 15.3387 8.65899 15.3095 8.75007 15.2581L11.3536 13.7897C11.72 13.5671 12.0062 13.2338 12.171 12.8379C12.3358 12.4421 12.3705 12.0041 12.2702 11.5872L11.8244 9.7479L12.6492 8.98956C13.7319 8.07949 14.5339 6.8807 14.9621 5.53265C15.3902 4.18459 15.4267 2.74269 15.0675 1.37468ZM2.3816 7.14877L3.41903 5.30893C3.48347 5.18403 3.59325 5.08851 3.72587 5.04196C3.85848 4.99541 4.00388 5.00137 4.13225 5.0586L5.27719 5.33607L4.84385 5.8506C4.43303 6.34298 4.0777 6.87913 3.78431 7.44934L2.3816 7.14877ZM10.6951 12.6302L8.88453 13.6513L8.59819 12.3149C9.17861 12.0255 9.71936 11.6625 10.2071 11.235L10.7028 10.7792L10.9718 11.889C11.0066 12.026 10.9988 12.1704 10.9494 12.3029C10.8999 12.4354 10.8112 12.5496 10.6951 12.6302ZM11.7712 7.98668L9.31487 10.2442C8.34257 11.085 7.14328 11.6195 5.86793 11.7803L4.26506 10.1774C4.48034 8.89876 5.03287 7.70067 5.86565 6.70676L6.98454 5.37831C7.00318 5.35881 7.02058 5.33815 7.03663 5.31646L7.99325 4.18068C8.70057 3.34527 9.61691 2.71255 10.6487 2.34711C11.6805 1.98166 12.7909 1.8966 13.8663 2.1006C14.0752 3.17941 13.9911 4.29451 13.6226 5.32975C13.2541 6.36498 12.6148 7.28248 11.7712 7.98668ZM11.1559 3.8775C10.9581 3.8775 10.7648 3.93615 10.6003 4.04603C10.4359 4.15592 10.3077 4.31209 10.232 4.49482C10.1563 4.67755 10.1365 4.87861 10.1751 5.07259C10.2137 5.26658 10.309 5.44476 10.4488 5.58461C10.5887 5.72446 10.7668 5.8197 10.9608 5.85829C11.1548 5.89687 11.3559 5.87707 11.5386 5.80138C11.7213 5.7257 11.8775 5.59752 11.9874 5.43307C12.0973 5.26862 12.1559 5.07528 12.1559 4.8775C12.1559 4.74618 12.1301 4.61613 12.0798 4.4948C12.0296 4.37347 11.9559 4.26323 11.863 4.17036C11.7702 4.0775 11.6599 4.00384 11.5386 3.95359C11.4173 3.90334 11.2872 3.87748 11.1559 3.87749L11.1559 3.8775Z" fill="#F67A28"></path>
+                  </svg>
+                </span>
+                <div class="text-xs">
+                  <p class="font-medium">New task name</p>
+                  <p class="text-gray-500">Development</p>
+                </div>
+                <button class="ml-auto">
+                  <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.4999 10C17.2789 10 17.0669 10.0878 16.9107 10.2441C16.7544 10.4004 16.6666 10.6123 16.6666 10.8333V15.8333C16.6666 16.0543 16.5788 16.2663 16.4225 16.4226C16.2662 16.5789 16.0543 16.6667 15.8332 16.6667H4.16658C3.94557 16.6667 3.73361 16.5789 3.57732 16.4226C3.42104 16.2663 3.33325 16.0543 3.33325 15.8333V4.16667C3.33325 3.94565 3.42104 3.73369 3.57732 3.57741C3.73361 3.42113 3.94557 3.33333 4.16658 3.33333H9.16658C9.38759 3.33333 9.59956 3.24554 9.75584 3.08926C9.91212 2.93298 9.99991 2.72101 9.99991 2.5C9.99991 2.27899 9.91212 2.06702 9.75584 1.91074C9.59956 1.75446 9.38759 1.66667 9.16658 1.66667H4.16658C3.50354 1.66667 2.86765 1.93006 2.39881 2.3989C1.92997 2.86774 1.66658 3.50363 1.66658 4.16667V15.8333C1.66658 16.4964 1.92997 17.1323 2.39881 17.6011C2.86765 18.0699 3.50354 18.3333 4.16658 18.3333H15.8332C16.4963 18.3333 17.1322 18.0699 17.601 17.6011C18.0699 17.1323 18.3332 16.4964 18.3332 15.8333V10.8333C18.3332 10.6123 18.2455 10.4004 18.0892 10.2441C17.9329 10.0878 17.7209 10 17.4999 10ZM4.99991 10.6333V14.1667C4.99991 14.3877 5.08771 14.5996 5.24399 14.7559C5.40027 14.9122 5.61223 15 5.83325 15H9.36658C9.47625 15.0006 9.58497 14.9796 9.6865 14.9381C9.78803 14.8967 9.88038 14.8356 9.95825 14.7583L15.7249 8.98333L18.0916 6.66667C18.1697 6.5892 18.2317 6.49703 18.274 6.39548C18.3163 6.29393 18.3381 6.18501 18.3381 6.075C18.3381 5.96499 18.3163 5.85607 18.274 5.75452C18.2317 5.65297 18.1697 5.5608 18.0916 5.48333L14.5582 1.90833C14.4808 1.83023 14.3886 1.76823 14.2871 1.72592C14.1855 1.68362 14.0766 1.66183 13.9666 1.66183C13.8566 1.66183 13.7477 1.68362 13.6461 1.72592C13.5446 1.76823 13.4524 1.83023 13.3749 1.90833L11.0249 4.26667L5.24158 10.0417C5.16435 10.1195 5.10324 10.2119 5.06177 10.3134C5.0203 10.4149 4.99928 10.5237 4.99991 10.6333ZM13.9666 3.675L16.3249 6.03333L15.1416 7.21667L12.7832 4.85833L13.9666 3.675ZM6.66658 10.975L11.6082 6.03333L13.9666 8.39167L9.02491 13.3333H6.66658V10.975Z" fill="#8594A5"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="flex p-4 rounded">
+                <span class="inline-flex w-8 h-8 mr-2 justify-center items-center bg-blue-50 rounded">
+                  <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.0675 1.37468C15.0374 1.26049 14.9775 1.15633 14.894 1.07284C14.8106 0.989341 14.7064 0.929498 14.5922 0.899417C13.2246 0.54421 11.7845 0.582467 10.4377 1.00979C9.09094 1.4371 7.89221 2.2361 6.97958 3.31479L6.23629 4.19734L4.49976 3.77836C4.07759 3.63118 3.61642 3.64173 3.20141 3.80806C2.78641 3.97439 2.44561 4.28526 2.24195 4.68328L0.775154 7.28321C0.72376 7.37428 0.694511 7.47616 0.689772 7.58062C0.685033 7.68509 0.704936 7.7892 0.747874 7.88454C0.790811 7.97989 0.855578 8.0638 0.936941 8.12949C1.0183 8.19518 1.11398 8.2408 1.21623 8.26268L3.26473 8.7018C3.09121 9.23004 2.9673 9.7733 2.89462 10.3245C2.88144 10.4258 2.8917 10.5287 2.92461 10.6254C2.95751 10.7221 3.01218 10.8099 3.08439 10.8821L5.15113 12.9489C5.21301 13.0108 5.28648 13.0599 5.36736 13.0934C5.44823 13.127 5.53492 13.1442 5.62246 13.1442C5.64167 13.1442 5.66087 13.1432 5.68041 13.1416C6.24397 13.0909 6.80068 12.9815 7.34145 12.8149L7.77057 14.8171C7.7925 14.9193 7.83816 15.0149 7.90386 15.0963C7.96956 15.1776 8.05346 15.2423 8.14879 15.2853C8.24413 15.3282 8.34822 15.3481 8.45266 15.3434C8.55711 15.3387 8.65899 15.3095 8.75007 15.2581L11.3536 13.7897C11.72 13.5671 12.0062 13.2338 12.171 12.8379C12.3358 12.4421 12.3705 12.0041 12.2702 11.5872L11.8244 9.7479L12.6492 8.98956C13.7319 8.07949 14.5339 6.8807 14.9621 5.53265C15.3902 4.18459 15.4267 2.74269 15.0675 1.37468ZM2.3816 7.14877L3.41903 5.30893C3.48347 5.18403 3.59325 5.08851 3.72587 5.04196C3.85848 4.99541 4.00388 5.00137 4.13225 5.0586L5.27719 5.33607L4.84385 5.8506C4.43303 6.34298 4.0777 6.87913 3.78431 7.44934L2.3816 7.14877ZM10.6951 12.6302L8.88453 13.6513L8.59819 12.3149C9.17861 12.0255 9.71936 11.6625 10.2071 11.235L10.7028 10.7792L10.9718 11.889C11.0066 12.026 10.9988 12.1704 10.9494 12.3029C10.8999 12.4354 10.8112 12.5496 10.6951 12.6302ZM11.7712 7.98668L9.31487 10.2442C8.34257 11.085 7.14328 11.6195 5.86793 11.7803L4.26506 10.1774C4.48034 8.89876 5.03287 7.70067 5.86565 6.70676L6.98454 5.37831C7.00318 5.35881 7.02058 5.33815 7.03663 5.31646L7.99325 4.18068C8.70057 3.34527 9.61691 2.71255 10.6487 2.34711C11.6805 1.98166 12.7909 1.8966 13.8663 2.1006C14.0752 3.17941 13.9911 4.29451 13.6226 5.32975C13.2541 6.36498 12.6148 7.28248 11.7712 7.98668ZM11.1559 3.8775C10.9581 3.8775 10.7648 3.93615 10.6003 4.04603C10.4359 4.15592 10.3077 4.31209 10.232 4.49482C10.1563 4.67755 10.1365 4.87861 10.1751 5.07259C10.2137 5.26658 10.309 5.44476 10.4488 5.58461C10.5887 5.72446 10.7668 5.8197 10.9608 5.85829C11.1548 5.89687 11.3559 5.87707 11.5386 5.80138C11.7213 5.7257 11.8775 5.59752 11.9874 5.43307C12.0973 5.26862 12.1559 5.07528 12.1559 4.8775C12.1559 4.74618 12.1301 4.61613 12.0798 4.4948C12.0296 4.37347 11.9559 4.26323 11.863 4.17036C11.7702 4.0775 11.6599 4.00384 11.5386 3.95359C11.4173 3.90334 11.2872 3.87748 11.1559 3.87749L11.1559 3.8775Z" fill="#2D70F5"></path>
+                  </svg>
+                </span>
+                <div class="text-xs">
+                  <p class="font-medium">New task name</p>
+                  <p class="text-gray-500">Bug</p>
+                </div>
+                <button class="ml-auto">
+                  <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.4999 10C17.2789 10 17.0669 10.0878 16.9107 10.2441C16.7544 10.4004 16.6666 10.6123 16.6666 10.8333V15.8333C16.6666 16.0543 16.5788 16.2663 16.4225 16.4226C16.2662 16.5789 16.0543 16.6667 15.8332 16.6667H4.16658C3.94557 16.6667 3.73361 16.5789 3.57732 16.4226C3.42104 16.2663 3.33325 16.0543 3.33325 15.8333V4.16667C3.33325 3.94565 3.42104 3.73369 3.57732 3.57741C3.73361 3.42113 3.94557 3.33333 4.16658 3.33333H9.16658C9.38759 3.33333 9.59956 3.24554 9.75584 3.08926C9.91212 2.93298 9.99991 2.72101 9.99991 2.5C9.99991 2.27899 9.91212 2.06702 9.75584 1.91074C9.59956 1.75446 9.38759 1.66667 9.16658 1.66667H4.16658C3.50354 1.66667 2.86765 1.93006 2.39881 2.3989C1.92997 2.86774 1.66658 3.50363 1.66658 4.16667V15.8333C1.66658 16.4964 1.92997 17.1323 2.39881 17.6011C2.86765 18.0699 3.50354 18.3333 4.16658 18.3333H15.8332C16.4963 18.3333 17.1322 18.0699 17.601 17.6011C18.0699 17.1323 18.3332 16.4964 18.3332 15.8333V10.8333C18.3332 10.6123 18.2455 10.4004 18.0892 10.2441C17.9329 10.0878 17.7209 10 17.4999 10ZM4.99991 10.6333V14.1667C4.99991 14.3877 5.08771 14.5996 5.24399 14.7559C5.40027 14.9122 5.61223 15 5.83325 15H9.36658C9.47625 15.0006 9.58497 14.9796 9.6865 14.9381C9.78803 14.8967 9.88038 14.8356 9.95825 14.7583L15.7249 8.98333L18.0916 6.66667C18.1697 6.5892 18.2317 6.49703 18.274 6.39548C18.3163 6.29393 18.3381 6.18501 18.3381 6.075C18.3381 5.96499 18.3163 5.85607 18.274 5.75452C18.2317 5.65297 18.1697 5.5608 18.0916 5.48333L14.5582 1.90833C14.4808 1.83023 14.3886 1.76823 14.2871 1.72592C14.1855 1.68362 14.0766 1.66183 13.9666 1.66183C13.8566 1.66183 13.7477 1.68362 13.6461 1.72592C13.5446 1.76823 13.4524 1.83023 13.3749 1.90833L11.0249 4.26667L5.24158 10.0417C5.16435 10.1195 5.10324 10.2119 5.06177 10.3134C5.0203 10.4149 4.99928 10.5237 4.99991 10.6333ZM13.9666 3.675L16.3249 6.03333L15.1416 7.21667L12.7832 4.85833L13.9666 3.675ZM6.66658 10.975L11.6082 6.03333L13.9666 8.39167L9.02491 13.3333H6.66658V10.975Z" fill="#8594A5"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="flex p-4 bg-gray-50 rounded">
+                <span class="inline-flex w-8 h-8 mr-2 justify-center items-center bg-green-50 rounded">
+                  <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.0675 1.37468C15.0374 1.26049 14.9775 1.15633 14.894 1.07284C14.8106 0.989341 14.7064 0.929498 14.5922 0.899417C13.2246 0.54421 11.7845 0.582467 10.4377 1.00979C9.09094 1.4371 7.89221 2.2361 6.97958 3.31479L6.23629 4.19734L4.49976 3.77836C4.07759 3.63118 3.61642 3.64173 3.20141 3.80806C2.78641 3.97439 2.44561 4.28526 2.24195 4.68328L0.775154 7.28321C0.72376 7.37428 0.694511 7.47616 0.689772 7.58062C0.685033 7.68509 0.704936 7.7892 0.747874 7.88454C0.790811 7.97989 0.855578 8.0638 0.936941 8.12949C1.0183 8.19518 1.11398 8.2408 1.21623 8.26268L3.26473 8.7018C3.09121 9.23004 2.9673 9.7733 2.89462 10.3245C2.88144 10.4258 2.8917 10.5287 2.92461 10.6254C2.95751 10.7221 3.01218 10.8099 3.08439 10.8821L5.15113 12.9489C5.21301 13.0108 5.28648 13.0599 5.36736 13.0934C5.44823 13.127 5.53492 13.1442 5.62246 13.1442C5.64167 13.1442 5.66087 13.1432 5.68041 13.1416C6.24397 13.0909 6.80068 12.9815 7.34145 12.8149L7.77057 14.8171C7.7925 14.9193 7.83816 15.0149 7.90386 15.0963C7.96956 15.1776 8.05346 15.2423 8.14879 15.2853C8.24413 15.3282 8.34822 15.3481 8.45266 15.3434C8.55711 15.3387 8.65899 15.3095 8.75007 15.2581L11.3536 13.7897C11.72 13.5671 12.0062 13.2338 12.171 12.8379C12.3358 12.4421 12.3705 12.0041 12.2702 11.5872L11.8244 9.7479L12.6492 8.98956C13.7319 8.07949 14.5339 6.8807 14.9621 5.53265C15.3902 4.18459 15.4267 2.74269 15.0675 1.37468ZM2.3816 7.14877L3.41903 5.30893C3.48347 5.18403 3.59325 5.08851 3.72587 5.04196C3.85848 4.99541 4.00388 5.00137 4.13225 5.0586L5.27719 5.33607L4.84385 5.8506C4.43303 6.34298 4.0777 6.87913 3.78431 7.44934L2.3816 7.14877ZM10.6951 12.6302L8.88453 13.6513L8.59819 12.3149C9.17861 12.0255 9.71936 11.6625 10.2071 11.235L10.7028 10.7792L10.9718 11.889C11.0066 12.026 10.9988 12.1704 10.9494 12.3029C10.8999 12.4354 10.8112 12.5496 10.6951 12.6302ZM11.7712 7.98668L9.31487 10.2442C8.34257 11.085 7.14328 11.6195 5.86793 11.7803L4.26506 10.1774C4.48034 8.89876 5.03287 7.70067 5.86565 6.70676L6.98454 5.37831C7.00318 5.35881 7.02058 5.33815 7.03663 5.31646L7.99325 4.18068C8.70057 3.34527 9.61691 2.71255 10.6487 2.34711C11.6805 1.98166 12.7909 1.8966 13.8663 2.1006C14.0752 3.17941 13.9911 4.29451 13.6226 5.32975C13.2541 6.36498 12.6148 7.28248 11.7712 7.98668ZM11.1559 3.8775C10.9581 3.8775 10.7648 3.93615 10.6003 4.04603C10.4359 4.15592 10.3077 4.31209 10.232 4.49482C10.1563 4.67755 10.1365 4.87861 10.1751 5.07259C10.2137 5.26658 10.309 5.44476 10.4488 5.58461C10.5887 5.72446 10.7668 5.8197 10.9608 5.85829C11.1548 5.89687 11.3559 5.87707 11.5386 5.80138C11.7213 5.7257 11.8775 5.59752 11.9874 5.43307C12.0973 5.26862 12.1559 5.07528 12.1559 4.8775C12.1559 4.74618 12.1301 4.61613 12.0798 4.4948C12.0296 4.37347 11.9559 4.26323 11.863 4.17036C11.7702 4.0775 11.6599 4.00384 11.5386 3.95359C11.4173 3.90334 11.2872 3.87748 11.1559 3.87749L11.1559 3.8775Z" fill="#17BB84"></path>
+                  </svg>
+                </span>
+                <div class="text-xs">
+                  <p class="font-medium">New task name</p>
+                  <p class="text-gray-500">Development</p>
+                </div>
+                <button class="ml-auto">
+                  <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.4999 10C17.2789 10 17.0669 10.0878 16.9107 10.2441C16.7544 10.4004 16.6666 10.6123 16.6666 10.8333V15.8333C16.6666 16.0543 16.5788 16.2663 16.4225 16.4226C16.2662 16.5789 16.0543 16.6667 15.8332 16.6667H4.16658C3.94557 16.6667 3.73361 16.5789 3.57732 16.4226C3.42104 16.2663 3.33325 16.0543 3.33325 15.8333V4.16667C3.33325 3.94565 3.42104 3.73369 3.57732 3.57741C3.73361 3.42113 3.94557 3.33333 4.16658 3.33333H9.16658C9.38759 3.33333 9.59956 3.24554 9.75584 3.08926C9.91212 2.93298 9.99991 2.72101 9.99991 2.5C9.99991 2.27899 9.91212 2.06702 9.75584 1.91074C9.59956 1.75446 9.38759 1.66667 9.16658 1.66667H4.16658C3.50354 1.66667 2.86765 1.93006 2.39881 2.3989C1.92997 2.86774 1.66658 3.50363 1.66658 4.16667V15.8333C1.66658 16.4964 1.92997 17.1323 2.39881 17.6011C2.86765 18.0699 3.50354 18.3333 4.16658 18.3333H15.8332C16.4963 18.3333 17.1322 18.0699 17.601 17.6011C18.0699 17.1323 18.3332 16.4964 18.3332 15.8333V10.8333C18.3332 10.6123 18.2455 10.4004 18.0892 10.2441C17.9329 10.0878 17.7209 10 17.4999 10ZM4.99991 10.6333V14.1667C4.99991 14.3877 5.08771 14.5996 5.24399 14.7559C5.40027 14.9122 5.61223 15 5.83325 15H9.36658C9.47625 15.0006 9.58497 14.9796 9.6865 14.9381C9.78803 14.8967 9.88038 14.8356 9.95825 14.7583L15.7249 8.98333L18.0916 6.66667C18.1697 6.5892 18.2317 6.49703 18.274 6.39548C18.3163 6.29393 18.3381 6.18501 18.3381 6.075C18.3381 5.96499 18.3163 5.85607 18.274 5.75452C18.2317 5.65297 18.1697 5.5608 18.0916 5.48333L14.5582 1.90833C14.4808 1.83023 14.3886 1.76823 14.2871 1.72592C14.1855 1.68362 14.0766 1.66183 13.9666 1.66183C13.8566 1.66183 13.7477 1.68362 13.6461 1.72592C13.5446 1.76823 13.4524 1.83023 13.3749 1.90833L11.0249 4.26667L5.24158 10.0417C5.16435 10.1195 5.10324 10.2119 5.06177 10.3134C5.0203 10.4149 4.99928 10.5237 4.99991 10.6333ZM13.9666 3.675L16.3249 6.03333L15.1416 7.21667L12.7832 4.85833L13.9666 3.675ZM6.66658 10.975L11.6082 6.03333L13.9666 8.39167L9.02491 13.3333H6.66658V10.975Z" fill="#8594A5"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <div class="flex flex-wrap -mx-4 -mb-4 md:mb-0">
+        <div class="w-full md:w-1/2 px-4 mb-4 md:mb-0">
+      <section class="py-8">
+        <div class="container px-4 mx-auto">
+          <div class="pt-6 bg-white shadow rounded">
+            <div class="px-6 border-b">
+              <div class="flex flex-wrap items-center mb-6">
+                <h3 class="text-xl font-bold">Recent Transactions</h3>
+                <a class="ml-auto flex items-center py-2 px-3 text-xs text-white bg-indigo-500 hover:bg-indigo-600 rounded" href="#">
+                  <span class="mr-1">
+                    <svg width="14" height="14" viewbox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13 8.33337C12.6 8.33337 12.3333 8.60004 12.3333 9.00004V11.6667C12.3333 12.0667 12.0666 12.3334 11.6666 12.3334H2.33331C1.93331 12.3334 1.66665 12.0667 1.66665 11.6667V9.00004C1.66665 8.60004 1.39998 8.33337 0.99998 8.33337C0.59998 8.33337 0.333313 8.60004 0.333313 9.00004V11.6667C0.333313 12.8 1.19998 13.6667 2.33331 13.6667H11.6666C12.8 13.6667 13.6666 12.8 13.6666 11.6667V9.00004C13.6666 8.60004 13.4 8.33337 13 8.33337ZM4.79998 4.13337L6.33331 2.60004V9.00004C6.33331 9.40004 6.59998 9.66671 6.99998 9.66671C7.39998 9.66671 7.66665 9.40004 7.66665 9.00004V2.60004L9.19998 4.13337C9.46665 4.40004 9.86665 4.40004 10.1333 4.13337C10.4 3.86671 10.4 3.46671 10.1333 3.20004L7.46665 0.533374C7.19998 0.266707 6.79998 0.266707 6.53331 0.533374L3.86665 3.20004C3.59998 3.46671 3.59998 3.86671 3.86665 4.13337C4.13331 4.40004 4.53331 4.40004 4.79998 4.13337Z" fill="#AFABF1"></path>
+                    </svg>
+                  </span>
+                  <span>Export</span>
+                </a>
+              </div>
+              <div><a class="inline-block px-4 pb-2 text-sm font-medium text-indigo-500 border-b-2 border-indigo-500" href="#">Incoming</a><a class="inline-block px-4 pb-2 text-sm font-medium text-gray-500 border-b-2 border-transparent" href="#">Invoices</a></div>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="table-auto w-full">
+                <thead>
+                  <tr class="text-xs text-gray-500 text-left">
+                    <th class="flex items-center pl-6 py-4 font-medium">
+                      <input class="mr-3" type="checkbox" name="" id="">
+                      <a class="flex items-center" href="#">
+                        <span>Invoice ID</span>
+                        <span class="ml-2">
+                          <svg width="9" height="12" viewbox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.85957 7.52667L4.99957 10.3933L2.13957 7.52667C2.01403 7.40114 1.84377 7.33061 1.66623 7.33061C1.4887 7.33061 1.31843 7.40114 1.1929 7.52667C1.06736 7.65221 0.996837 7.82247 0.996837 8.00001C0.996837 8.17754 1.06736 8.3478 1.1929 8.47334L4.52623 11.8067C4.65114 11.9308 4.82011 12.0005 4.99623 12.0005C5.17236 12.0005 5.34132 11.9308 5.46623 11.8067L8.79957 8.47334C8.86173 8.41118 8.91103 8.33739 8.94467 8.25617C8.97831 8.17496 8.99563 8.08791 8.99563 8.00001C8.99563 7.9121 8.97831 7.82505 8.94467 7.74384C8.91103 7.66262 8.86173 7.58883 8.79957 7.52667C8.73741 7.46451 8.66361 7.41521 8.5824 7.38157C8.50118 7.34793 8.41414 7.33061 8.32623 7.33061C8.23833 7.33061 8.15128 7.34793 8.07007 7.38157C7.98885 7.41521 7.91506 7.46451 7.8529 7.52667H7.85957ZM2.13957 4.47334L4.99957 1.60667L7.85957 4.47334C7.98447 4.59751 8.15344 4.6672 8.32957 4.6672C8.50569 4.6672 8.67466 4.59751 8.79957 4.47334C8.92373 4.34843 8.99343 4.17946 8.99343 4.00334C8.99343 3.82722 8.92373 3.65825 8.79957 3.53334L5.46623 0.200006C5.40426 0.137521 5.33052 0.0879247 5.24928 0.0540789C5.16804 0.0202331 5.08091 0.00280762 4.9929 0.00280762C4.90489 0.00280762 4.81775 0.0202331 4.73651 0.0540789C4.65527 0.0879247 4.58154 0.137521 4.51957 0.200006L1.18623 3.53334C1.06158 3.65976 0.992254 3.83052 0.993504 4.00805C0.994754 4.18559 1.06648 4.35535 1.1929 4.48001C1.31932 4.60466 1.49008 4.67398 1.66761 4.67273C1.84515 4.67148 2.01491 4.59976 2.13957 4.47334Z" fill="#67798E"></path>
+                          </svg>
+                        </span>
+                      </a>
+                    </th>
+                    <th class="py-4 font-medium">
+                      <a class="flex items-center" href="#">
+                        <span>Date</span>
+                        <span class="ml-2">
+                          <svg width="9" height="12" viewbox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.85957 7.52667L4.99957 10.3933L2.13957 7.52667C2.01403 7.40114 1.84377 7.33061 1.66623 7.33061C1.4887 7.33061 1.31843 7.40114 1.1929 7.52667C1.06736 7.65221 0.996837 7.82247 0.996837 8.00001C0.996837 8.17754 1.06736 8.3478 1.1929 8.47334L4.52623 11.8067C4.65114 11.9308 4.82011 12.0005 4.99623 12.0005C5.17236 12.0005 5.34132 11.9308 5.46623 11.8067L8.79957 8.47334C8.86173 8.41118 8.91103 8.33739 8.94467 8.25617C8.97831 8.17496 8.99563 8.08791 8.99563 8.00001C8.99563 7.9121 8.97831 7.82505 8.94467 7.74384C8.91103 7.66262 8.86173 7.58883 8.79957 7.52667C8.73741 7.46451 8.66361 7.41521 8.5824 7.38157C8.50118 7.34793 8.41414 7.33061 8.32623 7.33061C8.23833 7.33061 8.15128 7.34793 8.07007 7.38157C7.98885 7.41521 7.91506 7.46451 7.8529 7.52667H7.85957ZM2.13957 4.47334L4.99957 1.60667L7.85957 4.47334C7.98447 4.59751 8.15344 4.6672 8.32957 4.6672C8.50569 4.6672 8.67466 4.59751 8.79957 4.47334C8.92373 4.34843 8.99343 4.17946 8.99343 4.00334C8.99343 3.82722 8.92373 3.65825 8.79957 3.53334L5.46623 0.200006C5.40426 0.137521 5.33052 0.0879247 5.24928 0.0540789C5.16804 0.0202331 5.08091 0.00280762 4.9929 0.00280762C4.90489 0.00280762 4.81775 0.0202331 4.73651 0.0540789C4.65527 0.0879247 4.58154 0.137521 4.51957 0.200006L1.18623 3.53334C1.06158 3.65976 0.992254 3.83052 0.993504 4.00805C0.994754 4.18559 1.06648 4.35535 1.1929 4.48001C1.31932 4.60466 1.49008 4.67398 1.66761 4.67273C1.84515 4.67148 2.01491 4.59976 2.13957 4.47334Z" fill="#67798E"></path>
+                          </svg>
+                        </span>
+                      </a>
+                    </th>
+                    <th class="py-4 font-medium">
+                      <a class="flex items-center" href="#">
+                        <span>Description</span>
+                        <span class="ml-2">
+                          <svg width="9" height="12" viewbox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.85957 7.52667L4.99957 10.3933L2.13957 7.52667C2.01403 7.40114 1.84377 7.33061 1.66623 7.33061C1.4887 7.33061 1.31843 7.40114 1.1929 7.52667C1.06736 7.65221 0.996837 7.82247 0.996837 8.00001C0.996837 8.17754 1.06736 8.3478 1.1929 8.47334L4.52623 11.8067C4.65114 11.9308 4.82011 12.0005 4.99623 12.0005C5.17236 12.0005 5.34132 11.9308 5.46623 11.8067L8.79957 8.47334C8.86173 8.41118 8.91103 8.33739 8.94467 8.25617C8.97831 8.17496 8.99563 8.08791 8.99563 8.00001C8.99563 7.9121 8.97831 7.82505 8.94467 7.74384C8.91103 7.66262 8.86173 7.58883 8.79957 7.52667C8.73741 7.46451 8.66361 7.41521 8.5824 7.38157C8.50118 7.34793 8.41414 7.33061 8.32623 7.33061C8.23833 7.33061 8.15128 7.34793 8.07007 7.38157C7.98885 7.41521 7.91506 7.46451 7.8529 7.52667H7.85957ZM2.13957 4.47334L4.99957 1.60667L7.85957 4.47334C7.98447 4.59751 8.15344 4.6672 8.32957 4.6672C8.50569 4.6672 8.67466 4.59751 8.79957 4.47334C8.92373 4.34843 8.99343 4.17946 8.99343 4.00334C8.99343 3.82722 8.92373 3.65825 8.79957 3.53334L5.46623 0.200006C5.40426 0.137521 5.33052 0.0879247 5.24928 0.0540789C5.16804 0.0202331 5.08091 0.00280762 4.9929 0.00280762C4.90489 0.00280762 4.81775 0.0202331 4.73651 0.0540789C4.65527 0.0879247 4.58154 0.137521 4.51957 0.200006L1.18623 3.53334C1.06158 3.65976 0.992254 3.83052 0.993504 4.00805C0.994754 4.18559 1.06648 4.35535 1.1929 4.48001C1.31932 4.60466 1.49008 4.67398 1.66761 4.67273C1.84515 4.67148 2.01491 4.59976 2.13957 4.47334Z" fill="#67798E"></path>
+                          </svg>
+                        </span>
+                      </a>
+                    </th>
+                    <th class="py-4 font-medium">
+                      <a class="flex items-center" href="#">
+                        <span>Status</span>
+                        <span class="ml-2">
+                          <svg width="9" height="12" viewbox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.85957 7.52667L4.99957 10.3933L2.13957 7.52667C2.01403 7.40114 1.84377 7.33061 1.66623 7.33061C1.4887 7.33061 1.31843 7.40114 1.1929 7.52667C1.06736 7.65221 0.996837 7.82247 0.996837 8.00001C0.996837 8.17754 1.06736 8.3478 1.1929 8.47334L4.52623 11.8067C4.65114 11.9308 4.82011 12.0005 4.99623 12.0005C5.17236 12.0005 5.34132 11.9308 5.46623 11.8067L8.79957 8.47334C8.86173 8.41118 8.91103 8.33739 8.94467 8.25617C8.97831 8.17496 8.99563 8.08791 8.99563 8.00001C8.99563 7.9121 8.97831 7.82505 8.94467 7.74384C8.91103 7.66262 8.86173 7.58883 8.79957 7.52667C8.73741 7.46451 8.66361 7.41521 8.5824 7.38157C8.50118 7.34793 8.41414 7.33061 8.32623 7.33061C8.23833 7.33061 8.15128 7.34793 8.07007 7.38157C7.98885 7.41521 7.91506 7.46451 7.8529 7.52667H7.85957ZM2.13957 4.47334L4.99957 1.60667L7.85957 4.47334C7.98447 4.59751 8.15344 4.6672 8.32957 4.6672C8.50569 4.6672 8.67466 4.59751 8.79957 4.47334C8.92373 4.34843 8.99343 4.17946 8.99343 4.00334C8.99343 3.82722 8.92373 3.65825 8.79957 3.53334L5.46623 0.200006C5.40426 0.137521 5.33052 0.0879247 5.24928 0.0540789C5.16804 0.0202331 5.08091 0.00280762 4.9929 0.00280762C4.90489 0.00280762 4.81775 0.0202331 4.73651 0.0540789C4.65527 0.0879247 4.58154 0.137521 4.51957 0.200006L1.18623 3.53334C1.06158 3.65976 0.992254 3.83052 0.993504 4.00805C0.994754 4.18559 1.06648 4.35535 1.1929 4.48001C1.31932 4.60466 1.49008 4.67398 1.66761 4.67273C1.84515 4.67148 2.01491 4.59976 2.13957 4.47334Z" fill="#67798E"></path>
+                          </svg>
+                        </span>
+                      </a>
+                    </th>
+                    <th class="py-4 font-medium">
+                      <a class="flex items-center" href="#">
+                        <span>Descriptions</span>
+                        <span class="ml-2">
+                          <svg width="9" height="12" viewbox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.85957 7.52667L4.99957 10.3933L2.13957 7.52667C2.01403 7.40114 1.84377 7.33061 1.66623 7.33061C1.4887 7.33061 1.31843 7.40114 1.1929 7.52667C1.06736 7.65221 0.996837 7.82247 0.996837 8.00001C0.996837 8.17754 1.06736 8.3478 1.1929 8.47334L4.52623 11.8067C4.65114 11.9308 4.82011 12.0005 4.99623 12.0005C5.17236 12.0005 5.34132 11.9308 5.46623 11.8067L8.79957 8.47334C8.86173 8.41118 8.91103 8.33739 8.94467 8.25617C8.97831 8.17496 8.99563 8.08791 8.99563 8.00001C8.99563 7.9121 8.97831 7.82505 8.94467 7.74384C8.91103 7.66262 8.86173 7.58883 8.79957 7.52667C8.73741 7.46451 8.66361 7.41521 8.5824 7.38157C8.50118 7.34793 8.41414 7.33061 8.32623 7.33061C8.23833 7.33061 8.15128 7.34793 8.07007 7.38157C7.98885 7.41521 7.91506 7.46451 7.8529 7.52667H7.85957ZM2.13957 4.47334L4.99957 1.60667L7.85957 4.47334C7.98447 4.59751 8.15344 4.6672 8.32957 4.6672C8.50569 4.6672 8.67466 4.59751 8.79957 4.47334C8.92373 4.34843 8.99343 4.17946 8.99343 4.00334C8.99343 3.82722 8.92373 3.65825 8.79957 3.53334L5.46623 0.200006C5.40426 0.137521 5.33052 0.0879247 5.24928 0.0540789C5.16804 0.0202331 5.08091 0.00280762 4.9929 0.00280762C4.90489 0.00280762 4.81775 0.0202331 4.73651 0.0540789C4.65527 0.0879247 4.58154 0.137521 4.51957 0.200006L1.18623 3.53334C1.06158 3.65976 0.992254 3.83052 0.993504 4.00805C0.994754 4.18559 1.06648 4.35535 1.1929 4.48001C1.31932 4.60466 1.49008 4.67398 1.66761 4.67273C1.84515 4.67148 2.01491 4.59976 2.13957 4.47334Z" fill="#67798E"></path>
+                          </svg>
+                        </span>
+                      </a>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-xs bg-gray-50">
+                    <td class="flex items-center py-5 px-6 font-medium">
+                      <input class="mr-3" type="checkbox" name="" id="">
+                      <p>M063592DR2</p>
+                    </td>
+                    <td class="font-medium">08.04.2021</td>
+                    <td class="font-medium">Code 5928MD01</td>
+                    <td>
+                      <span class="inline-block py-1 px-2 text-white bg-green-500 rounded-full">Completed</span>
+                    </td>
+                    <td>$2500.00</td>
+                  </tr>
+                  <tr class="text-xs">
+                    <td class="flex items-center py-5 px-6 font-medium">
+                      <input class="mr-3" type="checkbox" name="" id="">
+                      <p>M063592DR2</p>
+                    </td>
+                    <td class="font-medium">08.04.2021</td>
+                    <td class="font-medium">Code 5928MD01</td>
+                    <td>
+                      <span class="inline-block py-1 px-2 text-white bg-green-500 rounded-full">Completed</span>
+                    </td>
+                    <td>$2500.00</td>
+                  </tr>
+                  <tr class="text-xs bg-gray-50">
+                    <td class="flex items-center py-5 px-6 font-medium">
+                      <input class="mr-3" type="checkbox" name="" id="">
+                      <p>M063592DR2</p>
+                    </td>
+                    <td class="font-medium">08.04.2021</td>
+                    <td class="font-medium">Code 5928MD01</td>
+                    <td>
+                      <span class="inline-block py-1 px-2 text-white bg-green-500 rounded-full">Completed</span>
+                    </td>
+                    <td>$2500.00</td>
+                  </tr>
+                  <tr class="text-xs">
+                    <td class="flex items-center py-5 px-6 font-medium">
+                      <input class="mr-3" type="checkbox" name="" id="">
+                      <p>M063592DR2</p>
+                    </td>
+                    <td class="font-medium">08.04.2021</td>
+                    <td class="font-medium">Code 5928MD01</td>
+                    <td>
+                      <span class="inline-block py-1 px-2 text-white bg-green-500 rounded-full">Completed</span>
+                    </td>
+                    <td>$2500.00</td>
+                  </tr>
+                  <tr class="text-xs bg-gray-50">
+                    <td class="flex items-center py-5 px-6 font-medium">
+                      <input class="mr-3" type="checkbox" name="" id="">
+                      <p>M063592DR2</p>
+                    </td>
+                    <td class="font-medium">08.04.2021</td>
+                    <td class="font-medium">Code 5928MD01</td>
+                    <td>
+                      <span class="inline-block py-1 px-2 text-white bg-green-500 rounded-full">Completed</span>
+                    </td>
+                    <td>$2500.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      </div>
+        <div class="w-full md:w-1/2 px-4 mb-4 md:mb-0">
+      <section class="py-8">
+        <div class="container px-4 mx-auto">
+          <div class="pt-6 bg-white shadow rounded">
+            <div class="px-6 border-b">
+              <div class="flex flex-wrap items-center mb-6">
+                <h3 class="text-xl font-bold">Recent Transactions</h3>
+                <a class="ml-auto flex items-center py-2 px-3 text-xs text-white bg-indigo-500 hover:bg-indigo-600 rounded" href="#">
+                  <span class="mr-1">
+                    <svg width="14" height="14" viewbox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13 8.33337C12.6 8.33337 12.3333 8.60004 12.3333 9.00004V11.6667C12.3333 12.0667 12.0666 12.3334 11.6666 12.3334H2.33331C1.93331 12.3334 1.66665 12.0667 1.66665 11.6667V9.00004C1.66665 8.60004 1.39998 8.33337 0.99998 8.33337C0.59998 8.33337 0.333313 8.60004 0.333313 9.00004V11.6667C0.333313 12.8 1.19998 13.6667 2.33331 13.6667H11.6666C12.8 13.6667 13.6666 12.8 13.6666 11.6667V9.00004C13.6666 8.60004 13.4 8.33337 13 8.33337ZM4.79998 4.13337L6.33331 2.60004V9.00004C6.33331 9.40004 6.59998 9.66671 6.99998 9.66671C7.39998 9.66671 7.66665 9.40004 7.66665 9.00004V2.60004L9.19998 4.13337C9.46665 4.40004 9.86665 4.40004 10.1333 4.13337C10.4 3.86671 10.4 3.46671 10.1333 3.20004L7.46665 0.533374C7.19998 0.266707 6.79998 0.266707 6.53331 0.533374L3.86665 3.20004C3.59998 3.46671 3.59998 3.86671 3.86665 4.13337C4.13331 4.40004 4.53331 4.40004 4.79998 4.13337Z" fill="#AFABF1"></path>
+                    </svg>
+                  </span>
+                  <span>Export</span>
+                </a>
+              </div>
+              <div><a class="inline-block px-4 pb-2 text-sm font-medium text-indigo-500 border-b-2 border-indigo-500" href="#">Incoming</a><a class="inline-block px-4 pb-2 text-sm font-medium text-gray-500 border-b-2 border-transparent" href="#">Invoices</a></div>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="table-auto w-full">
+                <thead>
+                  <tr class="text-xs text-gray-500 text-left">
+                    <th class="flex items-center pl-6 py-4 font-medium">
+                      <input class="mr-3" type="checkbox" name="" id="">
+                      <a class="flex items-center" href="#">
+                        <span>Invoice ID</span>
+                        <span class="ml-2">
+                          <svg width="9" height="12" viewbox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.85957 7.52667L4.99957 10.3933L2.13957 7.52667C2.01403 7.40114 1.84377 7.33061 1.66623 7.33061C1.4887 7.33061 1.31843 7.40114 1.1929 7.52667C1.06736 7.65221 0.996837 7.82247 0.996837 8.00001C0.996837 8.17754 1.06736 8.3478 1.1929 8.47334L4.52623 11.8067C4.65114 11.9308 4.82011 12.0005 4.99623 12.0005C5.17236 12.0005 5.34132 11.9308 5.46623 11.8067L8.79957 8.47334C8.86173 8.41118 8.91103 8.33739 8.94467 8.25617C8.97831 8.17496 8.99563 8.08791 8.99563 8.00001C8.99563 7.9121 8.97831 7.82505 8.94467 7.74384C8.91103 7.66262 8.86173 7.58883 8.79957 7.52667C8.73741 7.46451 8.66361 7.41521 8.5824 7.38157C8.50118 7.34793 8.41414 7.33061 8.32623 7.33061C8.23833 7.33061 8.15128 7.34793 8.07007 7.38157C7.98885 7.41521 7.91506 7.46451 7.8529 7.52667H7.85957ZM2.13957 4.47334L4.99957 1.60667L7.85957 4.47334C7.98447 4.59751 8.15344 4.6672 8.32957 4.6672C8.50569 4.6672 8.67466 4.59751 8.79957 4.47334C8.92373 4.34843 8.99343 4.17946 8.99343 4.00334C8.99343 3.82722 8.92373 3.65825 8.79957 3.53334L5.46623 0.200006C5.40426 0.137521 5.33052 0.0879247 5.24928 0.0540789C5.16804 0.0202331 5.08091 0.00280762 4.9929 0.00280762C4.90489 0.00280762 4.81775 0.0202331 4.73651 0.0540789C4.65527 0.0879247 4.58154 0.137521 4.51957 0.200006L1.18623 3.53334C1.06158 3.65976 0.992254 3.83052 0.993504 4.00805C0.994754 4.18559 1.06648 4.35535 1.1929 4.48001C1.31932 4.60466 1.49008 4.67398 1.66761 4.67273C1.84515 4.67148 2.01491 4.59976 2.13957 4.47334Z" fill="#67798E"></path>
+                          </svg>
+                        </span>
+                      </a>
+                    </th>
+                    <th class="py-4 font-medium">
+                      <a class="flex items-center" href="#">
+                        <span>Date</span>
+                        <span class="ml-2">
+                          <svg width="9" height="12" viewbox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.85957 7.52667L4.99957 10.3933L2.13957 7.52667C2.01403 7.40114 1.84377 7.33061 1.66623 7.33061C1.4887 7.33061 1.31843 7.40114 1.1929 7.52667C1.06736 7.65221 0.996837 7.82247 0.996837 8.00001C0.996837 8.17754 1.06736 8.3478 1.1929 8.47334L4.52623 11.8067C4.65114 11.9308 4.82011 12.0005 4.99623 12.0005C5.17236 12.0005 5.34132 11.9308 5.46623 11.8067L8.79957 8.47334C8.86173 8.41118 8.91103 8.33739 8.94467 8.25617C8.97831 8.17496 8.99563 8.08791 8.99563 8.00001C8.99563 7.9121 8.97831 7.82505 8.94467 7.74384C8.91103 7.66262 8.86173 7.58883 8.79957 7.52667C8.73741 7.46451 8.66361 7.41521 8.5824 7.38157C8.50118 7.34793 8.41414 7.33061 8.32623 7.33061C8.23833 7.33061 8.15128 7.34793 8.07007 7.38157C7.98885 7.41521 7.91506 7.46451 7.8529 7.52667H7.85957ZM2.13957 4.47334L4.99957 1.60667L7.85957 4.47334C7.98447 4.59751 8.15344 4.6672 8.32957 4.6672C8.50569 4.6672 8.67466 4.59751 8.79957 4.47334C8.92373 4.34843 8.99343 4.17946 8.99343 4.00334C8.99343 3.82722 8.92373 3.65825 8.79957 3.53334L5.46623 0.200006C5.40426 0.137521 5.33052 0.0879247 5.24928 0.0540789C5.16804 0.0202331 5.08091 0.00280762 4.9929 0.00280762C4.90489 0.00280762 4.81775 0.0202331 4.73651 0.0540789C4.65527 0.0879247 4.58154 0.137521 4.51957 0.200006L1.18623 3.53334C1.06158 3.65976 0.992254 3.83052 0.993504 4.00805C0.994754 4.18559 1.06648 4.35535 1.1929 4.48001C1.31932 4.60466 1.49008 4.67398 1.66761 4.67273C1.84515 4.67148 2.01491 4.59976 2.13957 4.47334Z" fill="#67798E"></path>
+                          </svg>
+                        </span>
+                      </a>
+                    </th>
+                    <th class="py-4 font-medium">
+                      <a class="flex items-center" href="#">
+                        <span>Description</span>
+                        <span class="ml-2">
+                          <svg width="9" height="12" viewbox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.85957 7.52667L4.99957 10.3933L2.13957 7.52667C2.01403 7.40114 1.84377 7.33061 1.66623 7.33061C1.4887 7.33061 1.31843 7.40114 1.1929 7.52667C1.06736 7.65221 0.996837 7.82247 0.996837 8.00001C0.996837 8.17754 1.06736 8.3478 1.1929 8.47334L4.52623 11.8067C4.65114 11.9308 4.82011 12.0005 4.99623 12.0005C5.17236 12.0005 5.34132 11.9308 5.46623 11.8067L8.79957 8.47334C8.86173 8.41118 8.91103 8.33739 8.94467 8.25617C8.97831 8.17496 8.99563 8.08791 8.99563 8.00001C8.99563 7.9121 8.97831 7.82505 8.94467 7.74384C8.91103 7.66262 8.86173 7.58883 8.79957 7.52667C8.73741 7.46451 8.66361 7.41521 8.5824 7.38157C8.50118 7.34793 8.41414 7.33061 8.32623 7.33061C8.23833 7.33061 8.15128 7.34793 8.07007 7.38157C7.98885 7.41521 7.91506 7.46451 7.8529 7.52667H7.85957ZM2.13957 4.47334L4.99957 1.60667L7.85957 4.47334C7.98447 4.59751 8.15344 4.6672 8.32957 4.6672C8.50569 4.6672 8.67466 4.59751 8.79957 4.47334C8.92373 4.34843 8.99343 4.17946 8.99343 4.00334C8.99343 3.82722 8.92373 3.65825 8.79957 3.53334L5.46623 0.200006C5.40426 0.137521 5.33052 0.0879247 5.24928 0.0540789C5.16804 0.0202331 5.08091 0.00280762 4.9929 0.00280762C4.90489 0.00280762 4.81775 0.0202331 4.73651 0.0540789C4.65527 0.0879247 4.58154 0.137521 4.51957 0.200006L1.18623 3.53334C1.06158 3.65976 0.992254 3.83052 0.993504 4.00805C0.994754 4.18559 1.06648 4.35535 1.1929 4.48001C1.31932 4.60466 1.49008 4.67398 1.66761 4.67273C1.84515 4.67148 2.01491 4.59976 2.13957 4.47334Z" fill="#67798E"></path>
+                          </svg>
+                        </span>
+                      </a>
+                    </th>
+                    <th class="py-4 font-medium">
+                      <a class="flex items-center" href="#">
+                        <span>Status</span>
+                        <span class="ml-2">
+                          <svg width="9" height="12" viewbox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.85957 7.52667L4.99957 10.3933L2.13957 7.52667C2.01403 7.40114 1.84377 7.33061 1.66623 7.33061C1.4887 7.33061 1.31843 7.40114 1.1929 7.52667C1.06736 7.65221 0.996837 7.82247 0.996837 8.00001C0.996837 8.17754 1.06736 8.3478 1.1929 8.47334L4.52623 11.8067C4.65114 11.9308 4.82011 12.0005 4.99623 12.0005C5.17236 12.0005 5.34132 11.9308 5.46623 11.8067L8.79957 8.47334C8.86173 8.41118 8.91103 8.33739 8.94467 8.25617C8.97831 8.17496 8.99563 8.08791 8.99563 8.00001C8.99563 7.9121 8.97831 7.82505 8.94467 7.74384C8.91103 7.66262 8.86173 7.58883 8.79957 7.52667C8.73741 7.46451 8.66361 7.41521 8.5824 7.38157C8.50118 7.34793 8.41414 7.33061 8.32623 7.33061C8.23833 7.33061 8.15128 7.34793 8.07007 7.38157C7.98885 7.41521 7.91506 7.46451 7.8529 7.52667H7.85957ZM2.13957 4.47334L4.99957 1.60667L7.85957 4.47334C7.98447 4.59751 8.15344 4.6672 8.32957 4.6672C8.50569 4.6672 8.67466 4.59751 8.79957 4.47334C8.92373 4.34843 8.99343 4.17946 8.99343 4.00334C8.99343 3.82722 8.92373 3.65825 8.79957 3.53334L5.46623 0.200006C5.40426 0.137521 5.33052 0.0879247 5.24928 0.0540789C5.16804 0.0202331 5.08091 0.00280762 4.9929 0.00280762C4.90489 0.00280762 4.81775 0.0202331 4.73651 0.0540789C4.65527 0.0879247 4.58154 0.137521 4.51957 0.200006L1.18623 3.53334C1.06158 3.65976 0.992254 3.83052 0.993504 4.00805C0.994754 4.18559 1.06648 4.35535 1.1929 4.48001C1.31932 4.60466 1.49008 4.67398 1.66761 4.67273C1.84515 4.67148 2.01491 4.59976 2.13957 4.47334Z" fill="#67798E"></path>
+                          </svg>
+                        </span>
+                      </a>
+                    </th>
+                    <th class="py-4 font-medium">
+                      <a class="flex items-center" href="#">
+                        <span>Descriptions</span>
+                        <span class="ml-2">
+                          <svg width="9" height="12" viewbox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.85957 7.52667L4.99957 10.3933L2.13957 7.52667C2.01403 7.40114 1.84377 7.33061 1.66623 7.33061C1.4887 7.33061 1.31843 7.40114 1.1929 7.52667C1.06736 7.65221 0.996837 7.82247 0.996837 8.00001C0.996837 8.17754 1.06736 8.3478 1.1929 8.47334L4.52623 11.8067C4.65114 11.9308 4.82011 12.0005 4.99623 12.0005C5.17236 12.0005 5.34132 11.9308 5.46623 11.8067L8.79957 8.47334C8.86173 8.41118 8.91103 8.33739 8.94467 8.25617C8.97831 8.17496 8.99563 8.08791 8.99563 8.00001C8.99563 7.9121 8.97831 7.82505 8.94467 7.74384C8.91103 7.66262 8.86173 7.58883 8.79957 7.52667C8.73741 7.46451 8.66361 7.41521 8.5824 7.38157C8.50118 7.34793 8.41414 7.33061 8.32623 7.33061C8.23833 7.33061 8.15128 7.34793 8.07007 7.38157C7.98885 7.41521 7.91506 7.46451 7.8529 7.52667H7.85957ZM2.13957 4.47334L4.99957 1.60667L7.85957 4.47334C7.98447 4.59751 8.15344 4.6672 8.32957 4.6672C8.50569 4.6672 8.67466 4.59751 8.79957 4.47334C8.92373 4.34843 8.99343 4.17946 8.99343 4.00334C8.99343 3.82722 8.92373 3.65825 8.79957 3.53334L5.46623 0.200006C5.40426 0.137521 5.33052 0.0879247 5.24928 0.0540789C5.16804 0.0202331 5.08091 0.00280762 4.9929 0.00280762C4.90489 0.00280762 4.81775 0.0202331 4.73651 0.0540789C4.65527 0.0879247 4.58154 0.137521 4.51957 0.200006L1.18623 3.53334C1.06158 3.65976 0.992254 3.83052 0.993504 4.00805C0.994754 4.18559 1.06648 4.35535 1.1929 4.48001C1.31932 4.60466 1.49008 4.67398 1.66761 4.67273C1.84515 4.67148 2.01491 4.59976 2.13957 4.47334Z" fill="#67798E"></path>
+                          </svg>
+                        </span>
+                      </a>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-xs bg-gray-50">
+                    <td class="flex items-center py-5 px-6 font-medium">
+                      <input class="mr-3" type="checkbox" name="" id="">
+                      <p>M063592DR2</p>
+                    </td>
+                    <td class="font-medium">08.04.2021</td>
+                    <td class="font-medium">Code 5928MD01</td>
+                    <td>
+                      <span class="inline-block py-1 px-2 text-white bg-green-500 rounded-full">Completed</span>
+                    </td>
+                    <td>$2500.00</td>
+                  </tr>
+                  <tr class="text-xs">
+                    <td class="flex items-center py-5 px-6 font-medium">
+                      <input class="mr-3" type="checkbox" name="" id="">
+                      <p>M063592DR2</p>
+                    </td>
+                    <td class="font-medium">08.04.2021</td>
+                    <td class="font-medium">Code 5928MD01</td>
+                    <td>
+                      <span class="inline-block py-1 px-2 text-white bg-green-500 rounded-full">Completed</span>
+                    </td>
+                    <td>$2500.00</td>
+                  </tr>
+                  <tr class="text-xs bg-gray-50">
+                    <td class="flex items-center py-5 px-6 font-medium">
+                      <input class="mr-3" type="checkbox" name="" id="">
+                      <p>M063592DR2</p>
+                    </td>
+                    <td class="font-medium">08.04.2021</td>
+                    <td class="font-medium">Code 5928MD01</td>
+                    <td>
+                      <span class="inline-block py-1 px-2 text-white bg-green-500 rounded-full">Completed</span>
+                    </td>
+                    <td>$2500.00</td>
+                  </tr>
+                  <tr class="text-xs">
+                    <td class="flex items-center py-5 px-6 font-medium">
+                      <input class="mr-3" type="checkbox" name="" id="">
+                      <p>M063592DR2</p>
+                    </td>
+                    <td class="font-medium">08.04.2021</td>
+                    <td class="font-medium">Code 5928MD01</td>
+                    <td>
+                      <span class="inline-block py-1 px-2 text-white bg-green-500 rounded-full">Completed</span>
+                    </td>
+                    <td>$2500.00</td>
+                  </tr>
+                  <tr class="text-xs bg-gray-50">
+                    <td class="flex items-center py-5 px-6 font-medium">
+                      <input class="mr-3" type="checkbox" name="" id="">
+                      <p>M063592DR2</p>
+                    </td>
+                    <td class="font-medium">08.04.2021</td>
+                    <td class="font-medium">Code 5928MD01</td>
+                    <td>
+                      <span class="inline-block py-1 px-2 text-white bg-green-500 rounded-full">Completed</span>
+                    </td>
+                    <td>$2500.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="js/charts-demo.js"></script>
+    <script src="vendors/alpinejs/dist/cdn.min.js"></script>
+    <script src="vendors/chart.js/dist/chart.min.js"></script>
+    <script src="vendors/flatpickr/dist/flatpickr.min.js"></script>
+    <script src="vendors/flatpickr/dist/plugins/rangePlugin.js"></script>
+    <script src="vendors/@yaireo/tagify/dist/tagify.min.js"></script><
+    <script src="vendors/pristinejs/dist/pristine.min.js"></script>
+    <script src="vendors/simple-datatables/dist/umd/simple-datatables.js"></script>
+    <script src="vendors/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="vendors/flickity/dist/flickity.pkgd.min.js"></script>
+  
+    <script src="vendors/dropzone/dist/min/dropzone.min.js"></script>
+    <script src="vendors/simplemde/dist/simplemde.min.js"></script>
+    <script src="vendors/jsvectormap/dist/js/jsvectormap.min.js"></script>
+    <script src="vendors/jsvectormap/dist/maps/world.js"></script>
+  
+    <script src="src/js/demo.js"></script>
+  
+    <!--start::Call vendor ( initialize vendor javascript )-->
+    <script src="src/js/vendor.js"></script>
+  
+    <!--start::Customizer js ( Only for demo purpose )-->
+    <script src="src/js/customizer.js"></script>
+</body>
+</html>
+
