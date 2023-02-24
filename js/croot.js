@@ -1,6 +1,6 @@
 import { get } from "https://jscroot.github.io/api/croot.js";
 import { setInner, addInner } from "https://jscroot.github.io/element/croot.js";
-import { getRandomColor } from "https://github.dev/jscroot/image/croot.js"
+import { getRandomColor } from "https://jscroot.github.io/image/croot.js"
 import { stringdiv, icons } from "./html.js";
 
        
