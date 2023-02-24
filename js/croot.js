@@ -2,7 +2,7 @@ import { get } from "https://jscroot.github.io/api/croot.js";
 import { setInner } from "https://jscroot.github.io/element/croot.js";
 
 function response(result){
-    stringtable = ''
+    let stringtable = '';
     result['data'].array.forEach(element => {
         stringtable += `<div class="flex p-4 bg-gray-50 rounded">
         <span class="inline-flex w-8 h-8 mr-2 justify-center items-center bg-blue-50 rounded">
