@@ -5,8 +5,7 @@ import { stringdiv, icons } from "./html.js";
 
        
 
-function response(result){
-    let jsonParse = JSON.parse(result);
+function response(jsonParse){
     var stringtable = '';
     jsonParse.data.forEach((element, index) => {
       let svgicon = icons.replace("#WARNA#", getRandomColor());
