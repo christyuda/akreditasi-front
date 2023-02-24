@@ -1,5 +1,5 @@
 import { get } from "https://jscroot.github.io/api/croot.js";
-import { setInner } from "https://jscroot.github.io/element/croot.js";
+import { setInner, addInner } from "https://jscroot.github.io/element/croot.js";
 
 
 let stringdiv = `<div class="flex p-4 #BG# rounded">
@@ -18,6 +18,7 @@ let stringdiv = `<div class="flex p-4 #BG# rounded">
           </svg>
         </button>
         </div>`;
+        
 
 function response(result){
     let jsonParse = JSON.parse(result);
@@ -30,7 +31,7 @@ function response(result){
         }
     });
 
-    setInner("demo",stringtable);
+    addInner("demo",stringtable);
 
 }
 
