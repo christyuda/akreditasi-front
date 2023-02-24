@@ -20,7 +20,7 @@ let stringdiv = `<div class="flex p-4 bg-gray-50 rounded">
         </div>`;
 
 function response(result){
-    jsonParse = JSON.parse(result);
+    let jsonParse = JSON.parse(result);
     var stringtable = '';
     jsonParse.data.forEach(element => {
         stringtable += stringdiv.replace("#NAMA#", element['first_name']).replace("#EMAIL#", element['email'])
